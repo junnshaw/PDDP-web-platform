@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% block head %} {{super()}} 
+<style>
+    .time-table-wrapper.mt-45 .table__heading .row.g-0 .col-2{
+        width: 33.3333%!important;
+    }
+</style>
+{% endblock %}
+{% block header %} {{super()}} {% endblock %}
+{% block body %}
+    <main>
+        <!-- slider area start -->
+        <div class="slider-area slider-area__3">
+            <div class="container container-3">
+                <div class="slider-active">
+                    <div class="single-slider single-slider-3 justify-content-center d-flex align-items-center slider-height-3"
+                        data-background="{{ url_for('static',filename='img/slider/03/resultpage-1.jpg') }}" data-overlay="3">
+                        <div class="slider-text mt-0 text-center">
+                            <span class="text-white">P D D P</span>
+                            <h2 class="text-white mb-45">基于序列信息嵌入的
+                                <br>
+                                PPI预测平台</h2>
+                            <a href="{{ url_for('main.selectFunction') }}" class="generic-btn btn-1">Select Function</a>
+                            <!-- <a href="service-details.html" class="featured-btn">Other Features Function<i
+                                    class="fal fa-long-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider area end -->
+        <!-- appointment area start -->
+        <div class="appoint-area mb-120">
+            <div class="container">
+                <div class="generic-title generic-title-4 text-center">
+                    <!-- 特殊字符————空一行 -->
+                    <span> &nbsp </span>
+                    <h4>PPI预测结果</h4>
+                </div>
+                <div style="display:none " id="time">
+                    {{ data_show }}
+                </div>
+                <div class="time-table">
+                    <div class="time-table-wrapper mt-45">
+                        <div class="table__heading">
+                            <div class="row g-0">
+                                <!-- MolTrans_docker -->
+                                 <div class="col-2" >
+                                    <div class="day__name text-center">
+                                        <b>蛋白质序列1</b>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>蛋白质序列2</b>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>可能性</b>
+                                    </div>
+                                </div>
+                                <!--<div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>Posibility</b>
+                                    </div>
+                                </div> -->
+                                <!-- DeepConv-DTI -->
+                                <!-- <div class="col-2" >
+                                    <div class="day__name text-center">
+                                        <b>target_name</b>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>drug</b>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>Reactive or not(1/0)</b>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>score</b>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="table__content" style="height: 500px; overflow-y: auto;">
+                            
+                            {% for data in data_show %}
+                            <div class="row g-0 table__row">
+                                <div class='col-2 table__box-item' style="width: 33.3333%;">
+                                    <div class='box__height d-flex align-items-center justify-content-center' style="overflow-x: auto;">{{ data["protein1"] }}</div>
+                                </div>
+                                <!-- MolTrans_docker -->
+                                 <div class='col-2 table__box-item' style="width: 33.3333333%; border-right: 2px solid;">
+                                    <div class='box__height  d-flex align-items-center justify-content-center' style="overflow-x: auto;">{{ data["protein2"] }}</div>
+                                </div>
+                                <div class='col-2 table__box-item' style="width: 33.3333333%; border-right: 2px solid; ">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["score"] }}</div>
+                                </div>
+                                
+                                <!--<div class='col-2 table__box-item' style="width: 33.3333333%;">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["pred"] }}</div>
+                                </div> -->
+                                <!-- DeepConv-DTI -->
+<!--                                 <div class='col-2 table__box-item' style="width: 50%; border-right: 2px solid; ">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["target_name"] }}</div>
+                                </div> -->
+                                <!-- <div class='col-2 table__box-item' style="width: 33.3333%; border-right: 2px solid;">
+                                    <div class='box__height  d-flex align-items-center justify-content-center' style="overflow-x: auto;">{{ data["drug"] }}</div>
+                                </div> -->
+                                
+                                <!-- <div class='col-2 table__box-item' style="width: 25%;">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["label"] }}</div>
+                                </div> -->
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /. time table -->
+            </div>
+        </div>
+        <!-- appointment area end -->
+    </main>
+{% endblock %}
+{% block footer %}{{super()}}{% endblock %}
+
+
+
+<script>
+    // function $$(){
+    // var time = document.getElementById('time');
+    // time = time.toString();
+    // var resultfpath = '/nfs_storage/Website_Client/tmp/output/'+time+'/output_csvTojson.json'
+    // // 判断文件是否存在
+    // if (resultfpath == null ||resultfpath == ''){
+    //   var showResultblock = document.getElementsByClassName('table__content');
+    //   // 添加提示
+    //   var attention = document.createElement("div");
+    //   attention.id = 'attenTion';
+    //   attention.innerHTML = '暂无数据';
+    //   showResultblock.append(attention);
+    // }else{
+    //     // 读取csv文件并规范网页格式
+    //     // 读取模型跑分
+    //     $(function(){
+    //         $.ajax({
+    //             url:resultfpath,
+    //             type:"GET",
+    //             dataType: "json",
+    //             async:false,
+    //             success:function(data){
+    //                 console.log(data)
+    //                 var msg = "";
+    //                 for(var i = 0;i<data.length;i++){
+    //                     msg += "<div class='row g-0 table__row'>";
+    //                     msg += "<div class='col-2 table__box-item'>";
+    //                     msg += "<div class='box__height d-flex align-items-center justify-content-center'>"+data[i].smiles+"</div>";
+    //                     msg += "</div>";
+    //                     msg += "<div class='col-2 table__box-item'>";
+    //                     msg += "<div class='box__height  d-flex align-items-center justify-content-center'>"+data[i].protein+"</div>";
+    //                     msg += "</div>";
+    //                     msg += "<div class='col-2 table__box-item'>";
+    //                     msg += "<div class='box__height d-flex align-items-center justify-content-center'>"+data[i].pred+"</div>";
+    //                     msg += "</div>";
+    //                     msg += "</div>"
+    //                 }
+    //                 $(".table__content").html(msg);
+                    
+    //                 // var unit = origin[].split('\n');
+    //                 // console.log(unit)
+    //                 // console.log(data[6])
+    //                 // ajax读取csv文件是转成txt文件的，需要重新切分
+    //                 // var msg = "";
+    //                 // msg += "<tr>"+"<th>"+"评价指标"+"</th>"+"<th>"+"得分"+"</th>"+"</tr>";
+    //                 // for ( var i = 0; i < data.length; i++) {//循环csv对象，拼接tr,td的html
+    //                 // msg += "<tr>";
+    //                 // console.log(data[i]?.SMILES)
+    //                 // msg += "<td>" + data[i]?.SMILES + "</td>";
+    //                 // msg += "<td>" + data[i]?.Pred + "</td>";
+    //                 // msg += "</tr>";
+    //                 // }
+    //                 // $("#tab").html(msg);
+    //                 // //通过jquery方式获取table，并把tr,td的html输出到table中
+    //             },
+    //             error:function(){
+    //             alert("数据加载错误!");
+    //             }
+    //         });
+    //     //d1.resolve();
+    //     });
+    //     }
+    // }
+</script>

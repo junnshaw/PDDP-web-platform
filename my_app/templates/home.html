@@ -1,0 +1,647 @@
+{% extends "base2.html" %}
+{% block head %} {{super()}} 
+<style>
+    .testimonial__img img{
+        width: 90%;
+        left: 5%;
+    }
+    .feature__text p{
+        color: #7a7a7a;
+    }
+    .generic-title p{
+        color: #7a7a7a;
+    }
+</style>
+{% endblock %}
+
+{% block mainheader %}
+{{super()}}
+       
+{% endblock %}
+
+{% block body %}
+<main>
+    <!-- slider area start -->
+    <!-- 主海报块 -->
+    <div class="slider-area" data-background="{{ url_for('static',filename='img/slider/home-1.png') }}">
+        <!-- <img src="{{url_for('static',filename='img/slider/home-1.png')}}" alt=""> -->
+        <div class="slider-active">
+            <div class="single-slider d-flex align-items-center slider-height">
+                <div class="container">
+                    <div class="slider-text slider-text-5 has-border mt-140">
+                        <span>PDDP</span>
+                        <h2>Professional compounds <br>
+                             and protein tools</h2>
+                        <p>Let everyone use professional drug compounds and protein tools</p>
+                        <div>
+                            <a href="{{ url_for('main.selectFunction') }}" class="generic-btn btn-1 ">Select Function</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider area end -->
+    <!-- service area start -->
+    <!-- 问题展示块 -->
+    <!-- <div class="service service-area-1 pt-120">
+        <div class="container">
+            <div class="row g-0 justify-content-center">
+                <div class="col-xl col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="service__box mb-30 text-center">
+                        <div class="service__icon mb-15">
+                            <i class="glyph-icon flaticon-abdominoplasty"></i>
+                        </div>
+                        <div class="service__text">
+                            <h4>Liposaction</h4>
+                            <p>Breast Augmentation
+                                Breast Lift
+                                Breast Reduction
+                                Breast Revision
+                                Gynecomastia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="service__box mb-30 text-center">
+                        <div class="service__icon mb-15">
+                            <i class="glyph-icon flaticon-anatomy"></i>
+                        </div>
+                        <div class="service__text">
+                            <h4>Non Surgical</h4>
+                            <p>Breast Augmentation
+                                Breast Lift
+                                Breast Reduction
+                                Breast Revision
+                                Gynecomastia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="service__box mb-30 text-center">
+                        <div class="service__icon mb-15">
+                            <i class="glyph-icon flaticon-asymmetry"></i>
+                        </div>
+                        <div class="service__text">
+                            <h4>Breast Implants</h4>
+                            <p>Breast Augmentation
+                                Breast Lift
+                                Breast Reduction
+                                Breast Revision
+                                Gynecomastia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="service__box mb-30 text-center">
+                        <div class="service__icon mb-15">
+                            <i class="glyph-icon flaticon-aesthetic"></i>
+                        </div>
+                        <div class="service__text">
+                            <h4>Lips Surgery</h4>
+                            <p>Breast Augmentation
+                                Breast Lift
+                                Breast Reduction
+                                Breast Revision
+                                Gynecomastia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="service__box mb-30 text-center border-0">
+                        <div class="service__icon mb-15">
+                            <i class="glyph-icon flaticon-beauty"></i>
+                        </div>
+                        <div class="service__text">
+                            <h4>Pender Unity</h4>
+                            <p>Breast Augmentation
+                                Breast Lift
+                                Breast Reduction
+                                Breast Revision
+                                Gynecomastia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- service area end -->
+    <!-- features area start -->
+    <!-- 问题解决块（功能块） -->
+    <div class="features__area features-1 gray-bg pt-120 pb-445 solution_block">
+        <div class="container">
+           <div class="features__tab">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#features__1"
+                            type="button" role="tab"  aria-selected="false">Protein-molecule Affinity Prediction</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#features__2" type="button" role="tab" 
+                            aria-selected="false">Drug Drug Interaction</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#features__4" type="button"
+                            role="tab"  aria-selected="false">Molecular Property Prediction</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#features__5" type="button"
+                            role="tab"  aria-selected="false">Generating Molecule</button>
+                    </li>
+                </ul>
+           </div>
+            <div class="tab-content">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="features__1" role="tabpanel">
+                        <div class="features__content mt-40">
+                            <div class="features__wrapper">
+                                <div class="row g-0">
+                                    <div class="col-xl">
+                                        <div class="features__text h-100">
+                                            <div class="generic-title">
+                                                <span>Function One</span>
+                                                <h4>Protein-molecule Afiinity Prediction
+                                                    </h4>
+                                            </div>
+                                            <div class="features__list">
+                                                <ul>
+                                                    <li class="mt-40">
+                                                        <div class="feature__logo">
+                                                            <img src="{url_for('static',filename='img/icon/f1.png')}" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Introduction</h4>
+                                                            <p><span>AI algorithm is used to predict protein-molecule Affinity，to build a bridge between Protein and molecule interaction, and the intensity of interaction is quantitatively judged by the obtained fraction.</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mt-30">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f2.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Model</h4>
+                                                            <p><span>MolTrans、DeepDTA、DeepConvDTI</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl d-none d-xl-block">
+                                        <div class="feature__img">
+                                            <img src="{{url_for('static',filename='img/bg/PMAP.png')}}" class="w-100" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="features__2" role="tabpanel">
+                        <div class="features__content mt-40">
+                            <div class="features__wrapper">
+                                <div class="row g-0">
+                                    <div class="col-xl">
+                                        <div class="features__text h-100">
+                                            <div class="generic-title">
+                                                <span>Function Two</span>
+                                                <h4>Drug Drug Interaction</h4>
+                                            </div>
+                                            <div class="features__list">
+                                                <ul>
+                                                    <li class="mt-40">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f1.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Introduction</h4>
+                                                            <p><span>AI algorithm is used to predict Drug Drug Interaction to realize the function of evaluating Drug Interaction and judge whether two drugs interact with each other through the score obtained.</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mt-30">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f2.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Model</h4>
+                                                            <p><span>DeepDrug</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl d-none d-xl-block">
+                                        <div class="feature__img">
+                                            <img src="{{url_for('static',filename='img/bg/about/PRFP.png')}}" class="w-100" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="features__3" role="tabpanel">
+                        <div class="features__content mt-40">
+                            <div class="features__wrapper">
+                                <div class="row g-0">
+                                    <div class="col-xl">
+                                        <div class="features__text h-100">
+                                            <div class="generic-title">
+                                                <span>Function Three</span>
+                                                <h4>Molecular Property Prediction</h4>
+                                            </div>
+                                            <div class="features__list">
+                                                <ul>
+                                                    <li class="mt-40">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f1.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Introduction</h4>
+                                                            <p><span>AI algorithms to predict Molecular Property Prediction, study the property of molecules such as toxicity, and intuitively evaluate the performance through the result scores</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mt-30">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f2.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Model</h4>
+                                                            <p><span></span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl d-none d-xl-block">
+                                        <div class="feature__img">
+                                            <img src="{{url_for('static',filename='img/bg/about/PRFP.png')}}" class="w-100" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="features__4" role="tabpanel">
+                        <div class="features__content mt-40">
+                            <div class="features__wrapper">
+                                <div class="row g-0">
+                                    <div class="col-xl">
+                                        <div class="features__text h-100">
+                                            <div class="generic-title">
+                                                <span>Function Three</span>
+                                                <h4>Molecular Property Prediction</h4>
+                                            </div>
+                                            <div class="features__list">
+                                                <ul>
+                                                    <li class="mt-40">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f1.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Introduction</h4>
+                                                            <p><span>AI algorithms to predict Molecular Property Prediction, study the property of molecules such as toxicity, and intuitively evaluate the performance through the result scores</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mt-30">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f2.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Model</h4>
+                                                            <p><span></span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl d-none d-xl-block">
+                                        <div class="feature__img">
+                                            <img src="{{url_for('static',filename='img/bg/about/MPP.png')}}" class="w-100" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="features__5" role="tabpanel">
+                        <div class="features__content mt-40">
+                            <div class="features__wrapper">
+                                <div class="row g-0">
+                                    <div class="col-xl">
+                                        <div class="features__text h-100">
+                                            <div class="generic-title"> 
+                                                <span>Function Four</span>
+                                                <h4>Generating Molecule</h4>
+                                            </div>
+                                            <div class="features__list">
+                                                <ul>
+                                                    <li class="mt-40">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f1.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Introduction</h4>
+                                                            <p><span>AI algorithm predicts Generating Molecule, all molecules with similar structure generated, and evaluates the possibility of Generating Molecule by fraction</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="mt-30">
+                                                        <div class="feature__logo">
+                                                            <img src="img/icon/f2.png" alt="">
+                                                        </div>
+                                                        <div class="feature__text">
+                                                            <h4>Model</h4>
+                                                            <p><span>BIMODAL</span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl d-none d-xl-block">
+                                        <div class="feature__img">
+                                            <img src="{{url_for('static',filename='img/bg/about/GM.png')}}" class="w-100" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- features area end -->
+    <!-- appointment area start -->
+    <div class="appoint-area mb-120">
+        <div class="generic-title generic-title-4 text-center">
+            <!-- 特殊字符————空一行 -->
+            <span> &nbsp </span>
+            <h4>Literature Citation</h4>
+        </div>
+        <div class='col-2 table__box-item' style="width: 90%; margin-top: 5%; margin-left: 5%; background-color: #f9f9f9; ">
+            [1] Huang K, Xiao C, Glass L M, et al. MolTrans: Molecular Interaction Transformer for drug–target interaction prediction[J]. Bioinformatics, 2021, 37(6): 830-836.<br>
+            [2] Lee I, Keum J, Nam H. DeepConv-DTI: Prediction of drug-target interactions via deep learning with convolution on protein sequences[J]. PLoS computational biology, 2019, 15(6): e1007129.<br>
+            [3] Öztürk H, Özgür A, Ozkirimli E. DeepDTA: deep drug–target binding affinity prediction[J]. Bioinformatics, 2018, 34(17): i821-i829.<br>
+            [4] Grisoni F, Moret M, Lingwood R, et al. Bidirectional molecule generation with recurrent neural networks[J]. Journal of chemical information and modeling, 2020, 60(3): 1175-1183.
+        </div>
+    </div>
+    <!-- appointment area end -->
+    <!-- team area start -->
+    <!-- 团队介绍块 -->
+    <div class="team-area pt-110">
+        <div class="container">
+            <div class="row  p-rel">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="team__left">
+                        <div class="generic-title">
+                            <span>Our Team</span>
+                            <h4>Our experts team is ready
+                                for this kind solutions.</h4>
+<!--                             <p>NewLook unlike many traditional plastic surgery centers in San Diego,
+                                are industry recognized experts in a wide variety of cosmetic procedure
+                                and are dedicated to providing customers.</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 p-static offset-xl-1">
+                    <div class="testimonial__active  p-static mt-30">
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Song.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Professor</span>
+                                        <a href="team.html">
+                                            <h4>Tao Song</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/WangS.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Professor</span>
+                                        <a href="team.html">
+                                            <h4>Shuang Wang</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Han.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Doctor</span>
+                                        <a href="team.html">
+                                            <h4>Peifu Han</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Meng.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Doctor</span>
+                                        <a href="team.html">
+                                            <h4>Xiangyu Meng</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Li.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Doctor</span>
+                                        <a href="team.html">
+                                            <h4>Xue Li</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Ren.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Postgraduate</span>
+                                        <a href="team.html">
+                                            <h4>Yongqi Ren</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Gao.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Postgraduate</span>
+                                        <a href="team.html">
+                                            <h4>Changnan Gao</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single__testimonial text-center">
+                            <div class="col-12">
+                                <div class="testimonial__wrapper">
+                                    <div class="testimonial__img">
+                                        <img src="{{url_for('static',filename='img/testimonial/Wang.png')}}" alt="">
+                                    </div>
+                                    <div class="testimonial__text">
+                                        <span>Postgraduate</span>
+                                        <a href="team.html">
+                                            <h4>Lulu Wang</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- news area start -->
+    <!-- 新闻摘要块 -->
+    <!-- <div class="news-area gray-bg pt-95 pb-70 mt-80">
+        <div class="container">
+            <div class="row mb-50 align-items-center">
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="generic-title">
+                        <span>Update & Plans</span>
+                        <h2>Project Debriefing</h2>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-6 col-md-6">
+                    <a href="blog.html" class="generic-btn-2 white-btn f-right"><i class="fal fa-newspaper"></i>
+                        News Detail</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-9">
+                    <div class="row">
+                        <div class="col-xl col-lg col-md-6 col-sm-6 col-12">
+                            <div class="single__news mb-30">
+                                <div class="news__img">
+                                    <img src="{{url_for('static',filename='img/news/n1.png')}}">
+                                </div>
+                                <div class="news__text p-0">
+                                    <div class="news__meta">
+                                        <a href="blog.html" class="theme-color">Experience</a> <span>August 22th,
+                                            2019</span>
+                                    </div>
+                                    <div class="news__link">
+                                        <h4>
+                                            <a href="news-details.html">Face Lift is a Non-surgical Surgery to </a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl col-lg col-md-6 col-sm-6 col-12">
+                            <div class="single__news mb-30">
+                                <div class="news__img">
+                                    <img src="{{url_for('static',filename='img/news/n2.png')}}">
+                                </div>
+                                <div class="news__text p-0">
+                                    <div class="news__meta">
+                                        <a href="blog.html" class="theme-color">Experience</a> <span>August 22th,
+                                            2019</span>
+                                    </div>
+                                    <div class="news__link">
+                                        <h4>
+                                        <h4>
+                                            <a href="news-details.html">Most Popular Breast Implant Surgeon </a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl col-lg col-md-6 col-sm-6 col-12">
+                            <div class="single__news mb-30">
+                                <div class="news__img">
+                                    <img src="{{url_for('static',filename='img/news/n3.png')}}">
+                                </div>
+                                <div class="news__text p-0">
+                                    <div class="news__meta">
+                                        <a href="blog.html" class="theme-color">Experience</a> <span>August 22th,
+                                            2019</span>
+                                    </div>
+                                    <div class="news__link">
+                                        <h4>
+                                            <a href="news-details.html">Tips How to repair your car
+                                                by yourselft in your gara</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="subscribe__widget">
+                        <div class="subscribe__widget-icon">
+                            <img src="{{url_for('static',filename='img/icon/envelope.png')}}">
+                        </div>
+                        <div class="subscribe__widget-text">
+                            <h4>Subscribe Now</h4>
+                            <div class="subscribe__widge-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter email address">
+                                    <button class="generic-btn border-0 btn-1">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- news area end -->
+
+</main>
+{% endblock %}
+
+{% block footer %}{{super()}}{% endblock %}
+

@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block head %} {{super()}} {% endblock %}
+
+{% block header %} {{super()}} {% endblock %}
+
+{% block body %}
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area d-flex align-items-center breadcrumb__height"
+            data-background="{{ url_for('static',filename='img/slider/home-1.png') }}" data-overlay="5">
+            <div class="container container-3">
+                <div class="breadcrumb__text mt-150">
+                    <div class="row align-items-center">
+                        <!-- 主海报上标题 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__left">
+                                <div class="breadcrumb__title">
+                                    <span>基于序列信息嵌入</span>
+                                    <br><h2>PPI预测平台使用说明</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 主海报上右侧按钮 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.selectFunction') }}"><b>Function</b></a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+        <!-- pricing area start -->
+        <!-- 功能选择块 -->
+        <div class="price-area pt-120 pb-120">
+            <div class="container">
+                <div class="price__wrapper">
+                    <div class="row">
+                        <h3>（1）蛋白质序列信息格式如下：</h3>
+                        <h4>蛋白质序列信息是由20种常见氨基酸构成的，其中20中常见氨基酸单字母缩写分别为A、C、D、E、F、G、H、I、K、L、M、N、P、Q、R、S、T、V、W、Y。用户输入的蛋白质序列信息是由氨基酸单字母缩写排列构成。例如：‘MEHSLIITETASTIASQTLMGISYHKRA’
+                        </h4>
+                        <h3><br>（2）对两种输入接口做如下解释：</h3>
+                        <h4>单个输入接口：用户输入人类种内蛋白质序列可以进行种内PPI预测，输入其他物种蛋白质可以进行种间蛋白质预测
+                        <br>两个输入接口：对用户输入蛋白质类型没有限制，可以用于种内PPI预测，也可以进行种间PPI预测
+                        </h4>
+                        <h3><br>（3）对输出结果做如下解释：</h3><br>
+                        <h4>单个输入接口：输出结果为输入蛋白质与人类（Human）种内相互作用数据集中每一个蛋白质序列的预测结果（0~1之间的小数，表示蛋白质相互作用可能性）
+                        <br>两个输入接口：输出结果为两个输入蛋白质序列预测结果（0~1之间的小数，表示蛋白质相互作用可能性）
+                        </h4>
+                        <!-- <div>
+                            You can enter multiple data with a carriage return . Please follow the following format for data entry . 
+                        </div>
+                        <h6>Format: <strong>Protein, Site position, Protein sequence</strong><br></h6>  
+                        <u>Example 1: please select site 'S'</u>
+                        <div>
+                         AT5G59960.1,5,MEKVSSPSSSFSRRSAYLEALTQEIKKKLTRAVVSPAQTRNLLQDLFADIALEVDDRAKDVILSKEEDLITSDEADADGPLCFFDVLADYYVKVS
+                         ERGKDILDLMVQLWSQSFASHIFSLLFHKWLFEVELDNQEILLRYSSALVQGATNVFWIDIQTNTRRFQSLFRYLLEEVALEQIRLKKIPIQAQRELYLLLSRFIFFYN
+                         SVDKLDSFLRNFPEFPdNAFLIGGPGDFLVIELTDQLQKLKVEPVLLHYLSQMKILQGMELRMTTSTRLKACLYSFTSPGGPMYPTRAVRHAAWDALDSLFPVG
+                         RYPRHLISLFFRLLYPWYWPSSCWNFVVSCIKAVLYSIVRLIFSRREKPRQS
+                        </div>
+                        <u>Example 2: please select site 'T'</u>
+                        <div>Q8TF42,23,MAQYGHPSPLGMAAREELYSKVTPRRNRQQRPGTIKHGSALDVLLSMGFPRARAQKALASTGGRSVQAACDWLFSHVGDPFLDDPLPREYVLY
+                        LRPTGPLAQKLSDFWQQSKQICGKNKAHNIFPHITLCQFFMCEDSKVDALGEALQTTVSRWKCKFSAPLPLELYTSSNFIGLFVKEDSAEVLKKFAADFAAEAA
+                        SKTEVHVEPHKKQLHVTLAYHFQASHLPTLEKLAQNIDVKLGCDWVATIFSRDIRFANHETLQVIYPYTPQNDDELELVPGDFIFMSPMEQTSTSEGWIYGTSLT
+                        TGCSGLLPENYITKADECSTWIFHGSYSILNTSSSNSLTFGDGVLERRPYEDQGLGETTPLTIICQPMQPLRVNSQPGPQKRCLFVCRHGERMDVVFGKYWLSQ
+                        CFDAKGRYIRTNLNMPHSLPQRSGGFRDYEKDAPITVFGCMQARLVGEALLESNTIIDHVYCSPSLRCVQTAHNILKGLQQENHLKIRVEPGLFEWTKWVAGST
+                        LPAWIPPSELAAANLSVDTTYRPHIPISKLVVSESYDTYISRSFQVTKEIISECKSKGNNILIVAHASSLEACTCQLQGLSPQNSKD
+                        </div><br>
+                        <u>Example 3: please select site 'Y'</u>
+                        <div>AT2G30480.1,9,MQDLDADFYSLKDNMSGVGSSFNHIAEPTSSKRTLFSIPDNQTNDFKKANTDNQTNDFKKTNTTADLMDGTERKLSVFDLVGDDHTTTNLE
+                        ECSPSEAHMAFSVEGLGKINTETPVNSPQPSDRTFVYRCSSPWKDTGQPDTSHVRGRLNDFENEVDTMIQSSKMFQDDSLYRSPIGIHAKDGGRKQKLQTFSD
+                        HLHKQYSDSRNYFCDVADFNNSRFSDDEWNAKPAFLDDGEDSFYWKAEQPCQKESLNPDFLKYCNDCTESRSSTEHHRKKKRDYLETTWRSNIRDSPTRRSH
+                        LLKRNIDYPSFAKAATSDFDFDNVFDRPVWSSIVLEEDKDSHSLRSEESCSSSAVWTNETHNSQFETNTRQRKRETNKFSNLGDKKYINTDLFQESWEDWEVD
+                        DQHMKRQVRSGKQGRLSNSGKLKSTSQRKGGLDASYDWFGEGFTSAGINSEITSERNKPYPFLNPERGSSHWRSSRAPDSIPETWIPKFSVGGTGDDDDGDH
+                        DEEDYVNCLSANHKSKLAGDTCGFENDTLSENDNEQSREVNHPKNQGDETSSSIAKSLSDENDVVRCNPNKEVMEARHQRNRESGEKTSRDPFQQMIMLERRTLQ
+                        </div><br>
+                        <u>Example 4: Enter multiple data, Let's select site 'S' and input two data (Two data should be separated by a carriage return)</u> -->
+                        <!-- <div>
+                         在蛋白质序列信息提交后，稍等1-2分钟，即可获得结果。最终结果表示为蛋白质相互作用的可能性。
+                        </div><br> -->
+                        <!-- <h5><br><br>Step 3: Submit </h5><br><br>
+                        <div>Click the button 'Submit Data' , after a few seconds you will see the results <br></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pricing area end -->
+
+    </main>
+{% endblock %}
+
+    <!-- footer area start -->
+    <!-- 底部信息块 -->
+
+{% block footer %}{{super()}}{% endblock %}
+    <!-- footer area end -->
+
+
+
+    <!-- JS here -->
+    <!-- <script src="js/vendor/jquery-3.5.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/one-page-nav-min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/metisMenu.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/main.js"></script> -->
+
+    <!-- <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/one-page-nav-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/ajax-form.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/metisMenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.event.move.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.twentytwenty.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"></script> -->
+
+

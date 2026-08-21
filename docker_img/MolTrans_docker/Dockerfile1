@@ -1,0 +1,7 @@
+FROM dti:v1
+
+run mkdir /scripts
+workdir /scripts
+copy scripts/ /scripts/
+
+cmd ["/usr/local/bin/python","/scripts/Wrapper.py"]

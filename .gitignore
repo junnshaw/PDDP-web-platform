@@ -1,0 +1,25 @@
+# Python/runtime artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and transient runtime output
+*.log
+nohup.out
+tmp/
+
+# Environment and secret-bearing local files
+.env
+.env.*
+!.env.example
+
+# Nested Git metadata from vendored/upstream source folders
+**/.git/
+
+docker_img/molflow_docker/script/data/zinc250k_relgcn_kekulized_ggnp.npz

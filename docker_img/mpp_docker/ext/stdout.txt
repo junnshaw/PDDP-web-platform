@@ -1,0 +1,4 @@
+CN(C)CCC=C1C2=CC=CC=C2CCC2=CC=CC=C12
+smiles	sa_score
+CN(C)CCC=C1c2ccccc2CCc2ccccc21		2.174229
+finish

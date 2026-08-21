@@ -1,0 +1,1049 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- 顶部功能栏 -->
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HOME</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='img/favicon.ico') }}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/meanmenu.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slick.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/twentytwenty.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/df_style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/popupStyle.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/noty.css') }}" rel="stylesheet">
+    <style>
+        .container .footer__bottom.pt-60.pb-40 .row .col-xl-3{
+            width: 33.33%!important;
+        }
+    </style>
+    
+    <!-- JS here -->
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/one-page-nav-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/ajax-form.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/metisMenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.event.move.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.twentytwenty.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/smiles-drawer.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/noty.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
+
+    
+    {% endblock %}
+
+    
+</head>
+
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your <a href="#" class="theme-color">Experience</a> and security.</p>
+        <![endif]-->
+
+    
+
+    {% block header %}
+    <!-- header area start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header-transparent">
+        <div class="header-area d-none d-lg-block">
+            <div class="header-top">
+                <div class="container container-3">
+                    <div class="header-top__inner-4">
+                        <div class="row g-0">
+                            <div class="col-xxl-2 col-xl-2 col-lg-3">
+                                <div class="header-left header__left-4">
+                                    <div class="emergency">
+                                        <span>People in use: <b>6666</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-5 d-flex align-items-center">
+                                <div class="header__list header__list-4">
+                                    <ul>
+                                        <li class="mr-35"><a href="mailto:info@webmail.com"><i
+                                                    class="fal fa-envelope"></i> 1739622309@qq.com</a></li>
+                                        <li><a href="mailto:info@webmail.com"><i
+                                                    class="fal fa-phone"></i>17860706536</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. header top -->
+            <div class="header-bottom">
+                <div class="container container-3">
+                    <div class="header-wrapper header-wrapper__3 header-wrapper__4">
+                        <div class="header-wrapper__inner">
+                            <div class="row align-items-center">
+                                <div class="col-xxl-2 col-xl-2 col-lg-3">
+                                    <div class="logo">
+                                        <a href="{{ url_for('main.index') }}">
+                                            <img src="{{url_for('static',filename='img/logo/Graph2MDA.png')}}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 col-lg-7 col-sm-6 col-4 ">
+                                    <div class="header-left d-flex align-items-center">
+                                        <div class="header-menu-wrapper d-flex align-items-center">
+                                            <div class="header-nav header-nav__3 f-left d-none d-lg-block">
+                                                <nav id="mobile-menu">
+                                                    <ul>
+                                                        <li><a href="{{ url_for('main.index') }}">Home</a>
+                                                        </li>
+                                                        <li><a href="{{ url_for('main.about') }}">About</a></li>
+                                                        <!-- 平台新闻页 -->
+                                                        <li><a href="{{ url_for('main.blog') }}">News</a>
+                                                        </li>
+                                                        <!-- 联系方式提交页 -->
+                                                        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="mobile-toggle-bar">
+                                                <button>
+                                                    <i class="fal fa-bars"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 顶端功能栏右侧 -->
+                                <div class="col-xl-2  col-lg-2 col-sm-6 col-8">
+                                    <div class="header-cta header-cta__4 text-right">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="search-popup-btn"><i
+                                                        class="fal fa-search"></i></a>
+                                            </li>
+                                            <li class="visible-only-md">
+                                                <a href="#" class="info__toggle-btn"><i
+                                                        class="fal fa-bars"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+    <!-- search popup start -->
+    <!-- 搜索按钮弹出框 -->
+    <div class="search-popup">
+        <div class="search-close">
+            <button>
+                <i class="fal fa-times"></i>
+            </button>
+        </div>
+        <div class="search-form">
+            <form action="#">
+                <input type="text" placeholder="Search Here">
+                <button><i class="fal fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- responsive menu start -->
+    <!-- 手机用的项目组信息侧拉框-->
+    <div class="mobile-nav">
+        <div>
+            <button class="mobile-nav-close text-white">
+                <i class="fal fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <div class="nav" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="menu-tab-1-tab" data-bs-toggle="tab" href="#menu-tab-1" role="tab" aria-selected="true">Menu</a>
+                <a class="nav-link" id="menu-tab-2-tab" data-bs-toggle="tab" href="#menu-tab-2" role="tab"  aria-selected="false">Info</a>
+            </div>
+        </nav>
+        <div class="responsive-logo">
+            <a href="index.html"><img src="img/logo/logo_PDDP-white.png" alt=""></a>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="menu-tab-1" role="tabpanel">
+                <div class="mobile-menu"></div>
+            </div>
+            <div class="tab-pane fade" id="menu-tab-2" role="tabpanel">
+                <div class="side-info mb-30">
+                    <div class="contact-list mb-30">
+                        <h4>Team Address</h4>
+                        <p>66 Changjiang West Road, West Coast new area, Qingdao, Shandong</p>
+                    </div>
+                    <div class="contact-list mb-30">
+                        <h4>Phone Number</h4>
+                        <p>0536 111 6666 6666</p>
+                        <p>0536 111 6666 6666</p>
+                    </div>
+                    <div class="contact-list mb-30">
+                        <h4>Email Address</h4>
+                        <p>info@example.com</p>
+                        <p>example.mail@hum.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- info area start -->
+    <!-- 项目组信息侧拉框 -->
+    <div class="extra-info">
+        <div class="close-icon">
+            <button>
+                <i class="far fa-window-close"></i>
+            </button>
+        </div>
+        <div class="logo-side mb-30">
+            <!-- 平台LOGO -->
+            <a href="index.html">
+                <img src="img/logo/logo_PDDP-white.png" alt="">
+            </a>
+        </div>
+        <div class="side-info mb-30">
+            <!-- 项目组地址 -->
+            <div class="contact-list mb-30">
+                <h4>Team Address</h4>
+                <p>66 Changjiang West Road, West Coast new area, Qingdao, Shandong</p>
+            </div>
+            <!-- 项目组电话 -->
+            <div class="contact-list mb-30">
+                <h4>Phone Number</h4>
+                <p>0536 111 6666 6666</p>
+                <p>0536 111 6666 6666</p>
+            </div>
+            <!-- 项目组公共邮箱 -->
+            <div class="contact-list mb-30">
+                <h4>Email Address</h4>
+                <p>info@example.com</p>
+                <p>example.mail@hum.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas"></div>
+    <!-- info area end -->
+    {% endblock %}
+
+
+    {% block body %}
+    {% endblock %}
+  
+    {% block footer %}
+    <!-- footer area start -->
+    <!-- 底部信息块 -->
+    <footer class="footer" data-background="img/bg/footer-bg.jpg" data-overlay="9">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-xl col-lg col-md mb-4 mb-md-0">
+                        <div class="icon-footer">
+                            <a href="{{ url_for('main.index') }}"><img src="{{url_for('static',filename='img/logo/Graph2MDA.png')}}" alt=""></a>
+                        </div>
+                    </div>
+                    <!-- 登录方式 -->
+                    <!-- <div class="col-xl col-lg col-md">
+                        <div class="social__icon text-md-end text-start">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="footer__bottom pt-60 pb-40">
+                <div class="row">
+                    <!-- “关于我们” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer__left mb-30">
+                            <h4 class="title text-white">About Us</h4>
+                            <p>Because it does not spend hours selling to customers, maintaining a brick and mortar stores, or paying for a commissions.</p>
+                            <div class="contact__list">
+                                <ul>
+                                    <li><i class="fal fa-phone"></i> <span><b>Phone: </b> 0536 111 6666 6666</span></li>
+                                    <li><i class="fal fa-envelope"></i> <span><b>Email: </b> info@webexample.com</span>
+                                    </li>
+                                    <li><i class="fal fa-envelope"></i> <span><b>Mon-Sat: </b>10:00AM - 09:00PM</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- “我们的页面” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget pl-30">
+                            <h4 class="title text-white">我们的页面</h4>
+                            <div class="footer__list">
+                                <ul>
+                                    <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                                    <li><a href="{{ url_for('main.selectFunction') }}">Select  Function</a></li>
+				    <li><a href="{{ url_for('main.blog') }}">News</a></li>
+				    <li><a href="{{ url_for('main.about') }}">About</a></li>
+                                    <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- “关于我们的新闻” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer__right mb-30">
+                            <div class="footer-widget pl-40">
+                                <h4 class="title text-white">News Feeds</h4>
+                                <div class="footer__news--item">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="copyright-area">
+            <div class="footer__copyright">
+                <p>Copyright <a href="mailto:by@Example.com">by@Example</a> - 2021</p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+    {% endblock %} 
+</body>
+
+<script>
+    // js import
+(function ($) {
+"use strict";
+// preloader
+	var win = $(window);
+	win.on('load', function () {
+		$('#loading').fadeOut(500);
+	})
+
+// meanmenu
+$('#mobile-menu').meanmenu({
+	meanMenuContainer: '.mobile-menu',
+	meanScreenWidth: "992"
+});
+
+$("#submit_button").click(function(){
+    var defer = $.Deferred();
+    var input_smiles = $("#input").val();
+    var form = new FormData();
+    form.append("smiles",input_smiles);
+    // console.log(arg)
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result"
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            window.location.href="result"
+            console.log("error")
+        }
+
+    });
+});
+
+$("#submit_button_ddi").click(function(){
+    var defer = $.Deferred();
+    var input_smiles = $("#input_ddi").val();
+    var input_id = $("#input_id").val();
+    var form = new FormData();
+    form.append("smiles",input_smiles);
+    form.append("id",input_id);
+    // console.log(arg)
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit_ddi",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result_ddi"
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            window.location.href="result_ddi"
+            console.log("error")
+        }
+
+    });
+});
+
+$("#submit_button_molflow").click(function(){
+    var defer = $.Deferred();
+    //var input_smiles = $("#input_molflow").val();
+    //var input_id = $("#input_id").val();
+    var form = new FormData();
+    //form.append("smiles",input_smiles);
+    //form.append("id",input_id);
+    // console.log(arg)
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit_molflow",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result_molflow"
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            window.location.href="result_molflow"
+            console.log("error")
+        }
+
+    });
+});
+
+$("#submit_button_transphos").click(function(){
+    var defer = $.Deferred();
+    var input_txt = $("#input_txt").val();
+    var input_sites = $("#input_sites").val();
+    var form = new FormData();
+    form.append("sites",input_sites);
+    form.append("txt",input_txt);
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit_transphos",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result_transphos" + (arg.task_id ? "?task_id=" + encodeURIComponent(arg.task_id) : "")
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            var response = arg.responseJSON || {};
+            window.location.href="result_transphos" + (response.task_id ? "?task_id=" + encodeURIComponent(response.task_id) : "")
+            console.log("error")
+        }
+
+    });
+});
+//dnnxgb提交按钮
+$("#submit_button_dnnxgb").click(function(){
+    var defer = $.Deferred();
+    var input_dnnxgb1 = $("#input_dnnxgb1").val();
+    var input_dnnxgb2 = $("#input_dnnxgb2").val();
+    var form = new FormData();
+    form.append("input_dnnxgb1",input_dnnxgb1);
+    form.append("input_dnnxgb2",input_dnnxgb2);
+    // console.log(arg)
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit_dnnxgb",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result_dnnxgb"
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            window.location.href="result_dnnxgb"
+            console.log("error")
+        }
+
+    });
+});
+//jtvae提交按钮
+$("#submit_button_jtvae").click(function(){
+    var defer = $.Deferred();
+    var input_jtvae1 = $("#input_jtvae1").val();
+    var input_jtvae2 = $("#input_jtvae2").val();
+    var input_jtvae3 = $("#input_jtvae3").val();
+
+    var form = new FormData();
+    form.append("input_jtvae1",input_jtvae1);
+    form.append("input_jtvae2",input_jtvae2);
+    form.append("input_jtvae3",input_jtvae3);
+
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit_jtvae",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result_jtvae"
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            window.location.href="result_jtvae"
+            console.log("error")
+        }
+
+    });
+});
+
+//mda提交按钮
+$("#submit_button_mda").click(function(){
+    var defer = $.Deferred();
+    var input_mda1 = $("#input_mda1").val();
+    //var input_mda2 = $("#input_mda2").val();
+    var form = new FormData();
+    form.append("input_mda1",input_mda1);
+    //form.append("input_mda2",input_mda2);
+
+    $.ajax({
+        type:"POST",
+        url:"smiles_submit_mda",
+        async:true,
+        data:form,
+        dataType:'JSON',
+        withCredentials: true,
+        processData:false,
+        contentType:false,
+        
+        success:function(arg){
+            console.log(111111)
+            console.log(arg)
+            // out=arg.result
+            window.location.href="result_mda" + (arg.task_id ? "?task_id=" + encodeURIComponent(arg.task_id) : "")
+            // $("#submit-message").html(out)
+        },error:function(arg){
+            console.log(arg)
+            var response = arg.responseJSON || {};
+            window.location.href="result_mda" + (response.task_id ? "?task_id=" + encodeURIComponent(response.task_id) : "")
+            console.log("error")
+        }
+
+    });
+});
+
+$('#mobile-menu-3').meanmenu({
+	meanMenuContainer: '.mobile-menu',
+	meanScreenWidth: "768"
+});
+
+/* info-bar */
+$('.info-bar').on('click', function () {
+    $('.extra-info').addClass('info-open');
+    $('.offcanvas').addClass('active');
+})
+$('.close-icon,.offcanvas').on('click', function () {
+    $('.extra-info').removeClass('info-open');
+    $('.offcanvas').removeClass('active');
+})
+
+// sidebar
+$('.mobile-nav-close,#mobile-nav-close').on('click',function(){
+	$('.mobile-nav').removeClass('show-nav');
+})
+$('.mobile-toggle-bar > button').on('click',function(){
+	$('.mobile-nav').addClass('show-nav');
+});
+
+win.on('scroll', function () {
+	var scroll = win.scrollTop();
+	if (scroll < 245) {
+		$(".header-sticky").removeClass("sticky");
+	} else {
+		$(".header-sticky").addClass("sticky");
+	}
+});
+//  popup
+$('.search-close button').on('click', function () {
+	$('.search-popup').removeClass('visible');
+})
+$('.search-popup-btn').on('click', function () {
+	$('.search-popup').addClass('visible');
+})
+$('.info__toggle-btn').on('click',function(){
+	$('.info__area').addClass('info__visible');
+	$('.extra-info').addClass('info-open');
+})
+
+$('.info__close-icon,.close-icon button').on('click',function(){
+	$('.info__area').removeClass('info__visible');
+})
+
+// slider content slide
+$('.slider-content-active').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	dots: false,
+	fade: true,
+	asNavFor: '.slider-tab__thumb',
+  });
+  $('.slider-tab__thumb').slick({
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	asNavFor: '.slider-content-active',
+	dots: false,
+	centerMode: false,
+	focusOnSelect: true,
+  });
+
+  // testimonial slide
+$('.testimonial__active-4').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	dots: false,
+	fade: false,
+	asNavFor: '.testimonial__tab-active',
+  });
+  $('.testimonial__tab-active').slick({
+	slidesToShow: 2,
+	slidesToScroll: 1,
+	asNavFor: '.testimonial__active-4',
+	dots: false,
+	centerMode: false,
+	arrows: false,
+	focusOnSelect: true,
+	responsive: [
+		{
+		  breakpoint: 767,
+		  settings: {
+			slidesToShow: 1
+		  }
+		}
+		// You can unslick at a given breakpoint now by adding:
+		// settings: "unslick"
+		// instead of a settings object
+	  ]
+  });
+
+
+
+
+// data background
+$("[data-background]").each(function(){
+	$(this).css("background-image","url("+$(this).attr("data-background") + ") ")
+})
+
+$("[data-width]").each(function(){
+	$(this).css("width",$(this).attr("data-width"))
+})
+
+
+// mainSlider
+function mainSlider() {
+	var BasicSlider = $('.slider-active');
+	BasicSlider.on('init', function (e, slick) {
+		var $firstAnimatingElements = $('.single-slider:first-child').find('[data-animation]');
+		doAnimations($firstAnimatingElements);
+	});
+	BasicSlider.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+		var $animatingElements = $('.single-slider[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+		doAnimations($animatingElements);
+	});
+	BasicSlider.slick({
+		autoplay: false,
+		autoplaySpeed: 10000,
+		dots: false,
+		fade: true,
+		arrows: false,
+		responsive: [
+			{ breakpoint: 767, settings: { dots: false, arrows: false } }
+		]
+	});
+
+	function doAnimations(elements) {
+		var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		elements.each(function () {
+			var $this = $(this);
+			var $animationDelay = $this.data('delay');
+			var $animationType = 'animated ' + $this.data('animation');
+			$this.css({
+				'animation-delay': $animationDelay,
+				'-webkit-animation-delay': $animationDelay
+			});
+			$this.addClass($animationType).one(animationEndEvents, function () {
+				$this.removeClass($animationType);
+			});
+		});
+	}
+}
+mainSlider();
+$('.testimonial__active').slick({
+	dots: true,
+	arrows: false,
+	infinite: false,
+	speed: 500,
+	slidesToShow: 2,
+	slidesToScroll: 1,
+	responsive: [
+	  {
+		breakpoint: 1024,
+		settings: {
+		  slidesToShow: 2,
+		  slidesToScroll: 1,
+		  infinite: true,
+		  dots: true
+		}
+	  },
+	  {
+		breakpoint: 600,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1
+		}
+	  },
+	  {
+		breakpoint: 480,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1
+		}
+	  }
+	  // You can unslick at a given breakpoint now by adding:
+	  // settings: "unslick"
+	  // instead of a settings object
+	]
+  });
+
+
+$('.brand-active').owlCarousel({
+    loop:true,
+    margin:30,
+	items:5,
+	navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    nav:false,
+	dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+		500: {
+			items: 2
+		},
+        767:{
+            items:3
+        },
+        992:{
+            items:4
+		},
+		1400: {
+			items: 5,
+		}
+    }
+})
+$('.featured-active').owlCarousel({
+    loop:true,
+    margin: 30,
+	items:4,
+    nav:false,
+	dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        767:{
+            items:3
+        },
+        992:{
+            items:4
+		},
+		1400: {
+			items: 4,
+		}
+    }
+})
+$('.brand-active-2').owlCarousel({
+    loop:true,
+    margin:30,
+	items:5,
+	navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    nav:false,
+	dots:false,
+    responsive:{
+        0:{
+            items:1
+		},
+		600: {
+			items: 2,
+		},
+        767:{
+            items:3
+        },
+        992:{
+            items:4
+		},
+		1400: {
+			items: 4,
+		}
+    }
+})
+$('.related__post-active').owlCarousel({
+    loop:true,
+    margin:15,
+	items:2,
+	navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    nav:false,
+	dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        767:{
+            items:2
+        },
+        992:{
+            items:2
+        }
+    }
+})
+
+$('.feed-active').owlCarousel({
+    loop:true,
+    margin:0,
+	items:1,
+	navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    nav:false,
+	dots:false,
+})
+
+
+
+/* magnificPopup img view */
+$('.popup-image').magnificPopup({
+	type: 'image',
+	gallery: {
+	  enabled: true
+	}
+});
+
+/* magnificPopup video view */
+$('.popup-video').magnificPopup({
+	type: 'iframe'
+});
+
+
+// isotop
+var $grid = $('.gallery').isotope({
+	itemSelector: '.gallery__item',
+	layoutMode: 'fitRows'
+});
+$('.gallery').imagesLoaded( function() {
+	// init Isotope
+	var $gallery = $('.gallery').isotope({
+	  itemSelector: '.gallery__item',
+	  percentPosition: true,
+	  masonry: {
+		// use outer width of gallery-sizer for columnWidth
+		columnWidth: '.gallery__item',
+	  }
+	});
+
+// filter items on button click
+	$('.portfolio-menu').on( 'click', 'a', function() {
+	var filterValue = $(this).attr('data-filter');
+	$grid.isotope({ filter: filterValue });
+  });
+
+//for menu active class
+$('.portfolio-menu li').on('click', function(event) {
+	$(this).siblings('.active').removeClass('active');
+	$(this).addClass('active');
+	event.preventDefault();
+});
+
+});
+
+// scrollToTop
+$.scrollUp({
+	scrollName: 'scrollUp', // Element ID
+	topDistance: '300', // Distance from top before showing element (px)
+	topSpeed: 300, // Speed back to top (ms)
+	animation: 'fade', // Fade, slide, none
+	animationInSpeed: 200, // Animation in speed (ms)
+	animationOutSpeed: 200, // Animation out speed (ms)
+	scrollText: '<i class="fal fa-chevron-double-up"></i>', // Text for element
+	activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+});
+
+// WOW active
+new WOW().init();
+// footer slider
+$('.footer__news--active,.testimonial-active-2').slick({
+	dots: false,
+	infinite: false,
+	dots: false,
+	speed: 1000,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+  });
+// nice select
+$('select').niceSelect();
+
+// news slider
+$('.news__active').slick({
+	centerMode: false,
+	centerPadding: '60px',
+	slidesToShow: 4,
+	arrows: true,
+	prevArrow: '<button type="button" class="slick-prev"><i class="fal fa-long-arrow-right"></i></button>',
+	nextArrow: '<button type="button" class="slick-next"><i class="fal fa-long-arrow-left""></i></button>',
+	responsive: [
+		{
+			breakpoint: 480,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '40px',
+				slidesToShow: 1
+			}
+		},
+	  {
+		breakpoint: 768,
+		settings: {
+		  arrows: false,
+		  centerPadding: '40px',
+		  slidesToShow: 2
+		}
+	  },
+	  {
+		breakpoint: 1200,
+		settings: {
+		centerMode: false,
+		  arrows: false,
+		  centerPadding: '40px',
+		  slidesToShow: 3
+		}
+	  }
+	]
+  });
+
+
+// news popoup video
+        // popup video
+$('.news-popup-video').magnificPopup({
+	type: 'iframe',
+	// other options
+		iframe: {
+		markup: '<div class="mfp-iframe-scaler">'+
+					'<div class="mfp-close"></div>'+
+					'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+				'</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+
+		patterns: {
+			youtube: {
+			index: 'youtube.com/', 
+			id: 'v=',
+
+			src: 'https://www.youtube.com/embed/nDh5UdU_cZM' 
+			},
+
+		},
+
+		srcAction: 'iframe_src',
+		}
+	});
+
+// appoint active
+$('.appoint__active').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	dots: true,
+	fade: false,
+  });
+// image move slider
+$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+	  $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+$('.video-popup').magnificPopup({
+	type: 'iframe',
+})
+})(jQuery);
+</script>

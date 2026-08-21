@@ -1,0 +1,8 @@
+copy finish
+optimizer_weights are already deleted
+Parsing ['/input/data.csv'] , ['/input/morgan_test.csv'], ['/input/protein_test.csv'] with length 2500, type Convolution
+['/input/data.csv']
+	Positive data : 0
+	Negative data : 1811
+prediction
+save to /output/output.csv

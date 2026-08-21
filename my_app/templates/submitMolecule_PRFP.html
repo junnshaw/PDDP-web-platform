@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block head %} 
+{{super()}}
+<style>
+.btn-1{
+    color:#9e4f4b!important;
+}
+</style>
+
+{% endblock %}
+{% block header %} {{super()}} {% endblock %}
+{% block body %}
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area d-flex align-items-center breadcrumb__height"
+            data-background="{{ url_for('static',filename='img/bg/about/select_function-bg.jpg') }}" data-overlay="5">
+            <div class="container container-3">
+                <div class="breadcrumb__text mt-150">
+                    <div class="row align-items-center">
+                        <!-- 主海报上标题 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__left">
+                                <div class="breadcrumb__title">
+                                    <span>Welcome to our  Intelligent medicine platform</span>
+                                    <h2>Submit your Task</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 主海报上右侧按钮 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.selectFunction') }}"><b>Function</b></a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+        <!-- contact area start -->
+        <div class="contact-area mt-120">
+            <div class="container">
+                <div class="contact-widget mb-minus-100">
+                    <div class="contact-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-xxl-5 col-xl-5 col-lg-6">
+                                <div class="contact__left" data-background="{{ url_for('static',filename='img/bg/contact-bg.png') }}">
+                                    <h4>Protein Related Function Prediction</h4>
+                                    <p>Submit Task anytime & from anywhere</p>
+                                    <div class="contact__list-2">
+                                        <div class="graph">
+                                            <p>存放化合物分子绘图工具。ChemAxon的MarvinJS工具需要购买权限，暂时不能用</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-7 col-xl-7 col-lg-6">
+                                <!-- 提交模块 -->
+                                <div class="contact__right pr-80 mt-50 mt-lg-0">
+                                    <h4>Make Your Request</h4>
+                                    <p>Submit Task anytime & from anywhere</p>
+                                    <div class="contact__form appointment__form  mt-35">
+                                        <form method="POST" enctype="multipart/form-data" action="#">
+                                            <div class="row">
+                                                <!-- 提交SMILES字符串 -->
+                                                <div class="col-xxl-12">
+                                                    <p>Paste a SMILES in this box, or draw a molecule</p>
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="SMILES" name="smiles"
+                                                            id="smiles">
+                                                    </div>
+                                                </div>
+                                                <!-- 提交按钮 -->
+                                                <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <a class="generic-btn btn-1 border-0 w-fit-content" href="{{ url_for('main.result_PRFP') }}">Submit Request PRFP</a>
+                                                        <!-- 原按钮时button,可onclick=""链接函数 -->
+                                                        <!-- <input type="button" class="generic-btn btn-1 border-0 w-fit-content" name="submit_button" id="submit_button" onclick="pop()" value="Submit Request"></input> -->
+                                                        <div id="submit-message" class="col-md-4"></div><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map" style="height:200px;">
+            </div>
+            
+        </div>
+        <!-- contact area end -->
+        
+    </main>
+    <!-- 弹出进度条 -->
+    <div id="popwindow" style="display:none;">
+        <canvas id='canvas'></canvas>
+        <span class='background'></span>
+        <span class='foreground'></span>
+        正在运行，请稍候......
+    </div>
+    <!-- 弹出框格式 -->
+    <Script>
+        function pop(){
+            var div = document.getElementById('popwindow');
+            div.style.display = 'block';
+            div.style.position = 'absolute';
+            div.style.width = '100%';
+            div.style.height = '1300px';
+            div.style.left = '0';
+            div.style.top = '0';
+            div.style.background = '#f5f5f5';
+            div.style.zIndex = '100';
+            div.style.fontFamily = 'Microsoft YaHei';
+            div.style.fontWeight = '200';
+            div.style.textAlign = 'center';
+        }
+    </Script>
+    <script src="{{ url_for('static',filename='js/popup.js') }}"></script>
+{% endblock %}
+    <!-- footer area start -->
+    {% block footer %}{{super()}}{% endblock %}
+    <!-- footer area end -->
+
+
+    
+    
+

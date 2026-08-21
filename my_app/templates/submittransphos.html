@@ -1,0 +1,362 @@
+{% extends "base.html" %}
+{% block head %} 
+{{super()}}
+<style>
+    .btn-1{
+        color:#9e4f4b!important;
+    }
+    table {
+        width: 100%;
+      }
+      
+      table tbody tr td {
+        padding: 3px;
+        vertical-align: bottom;
+        text-align: center;
+      }
+      
+      .input-container {
+        padding: 10px;
+      }
+      
+      .settings-container {
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        right: 5%;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      
+      .canvas-container {
+        margin: 10px;
+        text-align: center;
+      }
+    
+      label {
+        font-family: Lato;
+        font-size: 0.75em;
+        color: #000;
+        display: block;
+      }
+    
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.75);
+        outline: none;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #000;
+        cursor: pointer;
+        border: 4px solid #fff;
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #000;
+        cursor: pointer;
+      }
+    
+      .contact-wrapper .row.align-items-center{
+        background-color: #9e4b47;
+      }
+      .contact-wrapper .row.align-items-center .canvas-container{
+        background-color: #FFF;
+      }
+    
+      .nice-select{
+          margin-bottom: 10px;
+      }
+</style>
+
+{% endblock %}
+{% block header %} {{super()}} {% endblock %}
+{% block body %}
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area d-flex align-items-center breadcrumb__height1"
+            data-background="{{ url_for('static',filename='img/bg/about/select_function-bg.jpg') }}" data-overlay="5">
+             <div class="container container-3">
+                <div class="breadcrumb__text mt-150">
+                    <div class="row align-items-center">
+                        <!-- 主海报上标题 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__left">
+                                <div class="breadcrumb__title">
+                                    <h2>TransPhos</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 主海报上右侧按钮 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.selectFunction') }}"><b>Function</b></a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- breadcrumb area end -->
+        <!-- contact area start -->
+        <div class="contact-area mt-120">
+            <div class="container">
+                <div class="contact-widget mb-minus-100">
+                    <div class="contact-wrapper">
+                        <div class="row align-items-center">
+                             <div class="col-xxl-5 col-xl-5 col-lg-6"> 
+                                <div class="pricing__img pricing__img-4">
+                                    <img src="{{ url_for('static',filename='img/bg/about/transphos_model.png') }}" alt="" width="475px" height="255px">
+                                    <p>Protein phosphorylation plays an important role in many human diseases. Here you can upload your own protein data. We can help you predict the phosphorylation sites. I hope it can be helpful to your research.</p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-7 col-xl-7 col-lg-6" >
+                                <!-- 提交模块 -->
+                                <div class="contact__right pr-80 mt-50 mt-lg-0">
+                                    <div class="contact__form appointment__form  mt-35">
+                                        <form method="POST" enctype="multipart/form-data" action="#">
+                                            <div class="row">
+                                                <!-- 提交模型选择 -->
+                                                <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <p>Select the site you want to predict below and upload your file</p>
+                                                            <select name="input_sites"  id="input_sites">
+                                                                <span class="current">S</span>
+                                                                    <ul class="list" >
+                                                                        <li data-value="S" class="option selected" >S</li>
+                                                                        <li data-value="T" class="option" >T</li>
+                                                                        <li data-value="Y" class="option" >Y</li>
+                                                                    </ul>
+                                                                    <!-- option不要删,删了出错 -->
+                                                                    <option value="S" name="sites">S</option>
+                                                                    <option value="T" name="sites">T</option>
+                                                                    <option value="Y" name="sites">Y</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <textarea type="text" class="parser" name="input_txt"
+                                                            id="input_txt" placeholder= "Please enter protein,position,sequence
+                                                                                              example:1AT5G59960.1,5,MEKVSSPSSSFSRRSAYLEALTQEIKKKLTRAVV"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <input type="button" class="generic-btn btn-1 border-0 w-fit-content" name="submit_button_transphos" id="submit_button_transphos" onclick="pop()" value="Submit Data" color='black' >
+                                                        <input type="button" class="generic-btn btn-1 border-0 w-fit-content" onclick="window.location.href='{{ url_for("transphos.transphos_introduction") }}'" value="How to use" color='black'>
+                                                        
+                                                        <div id="submit-message" color='black' class="col-md-4"></div><br>
+                                                    </div>
+                                               </div>
+                                           </div>
+                                     </form>
+                                    </div>
+                               </div>
+                          </div>
+                     </div>
+                </div>
+            </div>
+            </div>
+            <div class="contact-map" style="height:200px;">
+            </div>
+            
+        </div>
+        <!-- contact area end -->
+        
+    </main>
+    <!-- 弹出进度条 -->
+    <div id="popwindow" style="display:none;">
+        <canvas id='canvas'></canvas>
+        <span class='background'></span>
+        <span class='foreground'></span>
+        Running now, please wait......
+    </div>
+    <!-- 分子结构展示及弹出框格式 -->
+    <Script>
+        //分子结构展示
+        var sites = document.getElementById('sites')
+        var input = document.getElementById('input_transphos');
+        var debugCheckbox = document.getElementById('debug');
+        var bondThicknessInput = document.getElementById('bondThickness');
+        var textSizeInput = document.getElementById('textSize');
+        var bondLengthInput = document.getElementById('bondLength');
+        var shortBondLengthInput = document.getElementById('shortBondLength');
+        var bondSpacingInput = document.getElementById('bondSpacing');
+        var sizeInput = document.getElementById('size');
+        var overlapInput = document.getElementById('overlap');
+
+        var options = {
+        debug: false,
+        atomVisualization: 'default'
+        }
+
+        var smilesDrawer = new SmilesDrawer.Drawer(options);
+        var log = document.getElementById('log');
+
+        function draw() {
+        let t = performance.now();
+
+        SmilesDrawer.parse(input.value, function (tree) {
+            smilesDrawer.draw(tree, 'output-canvas', 'light', false);
+            let td = performance.now() - t;
+            log.innerHTML = '&nbsp;';
+            log.style.visibility = 'hidden';
+
+            new Noty({
+            text: 'Drawing took ' + td.toFixed(3) + 'ms with a total overlap score of ' + smilesDrawer.getTotalOverlapScore().toFixed(3) + '.',
+            killer: true,
+            timeout: 2000,
+            animation: {
+                open: null,
+                close: null
+            }
+            }).show();
+        }, function (err) {
+            log.innerHTML = err;
+            log.style.visibility = 'visible';
+            console.log(err);
+        });      
+        }
+
+        function updateOptions() {
+        smilesDrawer = new SmilesDrawer.Drawer(options);
+        draw();
+        }
+
+        document.addEventListener('DOMContentLoaded', function (event) {
+        input.addEventListener('input', function () {
+            draw();
+        });
+        //结构自定义
+        /*
+        debugCheckbox.addEventListener('click', function () {
+            options.debug = debugCheckbox.checked ? true : false;
+            updateOptions();
+        });
+
+        textSizeInput.addEventListener('input', function () {
+            options.fontSizeLarge = parseInt(textSizeInput.value);
+            options.fontSizeSmall = (3 / 5) * options.fontSizeLarge;
+            updateOptions();
+        });
+
+        bondThicknessInput.addEventListener('input', function () {
+            options.bondThickness = parseFloat(bondThicknessInput.value);
+            updateOptions();
+        });
+
+        bondLengthInput.addEventListener('input', function () {
+            options.bondLength = parseInt(bondLengthInput.value);
+            updateOptions();
+        });
+
+        shortBondLengthInput.addEventListener('input', function () {
+            options.shortBondLength = parseInt(shortBondLengthInput.value) / 100;
+            updateOptions();
+        });
+
+        bondSpacingInput.addEventListener('input', function () {
+            options.bondSpacing = parseInt(bondSpacingInput.value);
+            updateOptions();
+        });
+
+        sizeInput.addEventListener('input', function () {
+            options.width = parseInt(sizeInput.value);
+            options.height = parseInt(sizeInput.value);
+            updateOptions();
+        });
+
+        overlapInput.addEventListener('input', function () {
+            options.overlapResolutionIterations = parseInt(overlapInput.value);
+            updateOptions();
+        });debugCheckbox.addEventListener('click', function () {
+            options.debug = debugCheckbox.checked ? true : false;
+            updateOptions();
+        });
+
+        textSizeInput.addEventListener('input', function () {
+            options.fontSizeLarge = parseInt(textSizeInput.value);
+            options.fontSizeSmall = (3 / 5) * options.fontSizeLarge;
+            updateOptions();
+        });
+
+        bondThicknessInput.addEventListener('input', function () {
+            options.bondThickness = parseFloat(bondThicknessInput.value);
+            updateOptions();
+        });
+
+        bondLengthInput.addEventListener('input', function () {
+            options.bondLength = parseInt(bondLengthInput.value);
+            updateOptions();
+        });
+
+        shortBondLengthInput.addEventListener('input', function () {
+            options.shortBondLength = parseInt(shortBondLengthInput.value) / 100;
+            updateOptions();
+        });
+
+        bondSpacingInput.addEventListener('input', function () {
+            options.bondSpacing = parseInt(bondSpacingInput.value);
+            updateOptions();
+        });
+
+        sizeInput.addEventListener('input', function () {
+            options.width = parseInt(sizeInput.value);
+            options.height = parseInt(sizeInput.value);
+            updateOptions();
+        });
+
+        overlapInput.addEventListener('input', function () {
+            options.overlapResolutionIterations = parseInt(overlapInput.value);
+            updateOptions();
+        });
+        */
+        });
+
+        //弹出框
+        function pop(){
+            var div = document.getElementById('popwindow');
+            div.style.display = 'block';
+            div.style.position = 'absolute';
+            div.style.width = '100%';
+            div.style.height = '1300px';
+            div.style.left = '0';
+            div.style.top = '0';
+            div.style.background = '#f5f5f5';
+            div.style.zIndex = '100';
+            div.style.fontFamily = 'Microsoft YaHei';
+            div.style.fontWeight = '200';
+            div.style.textAlign = 'center';
+        }
+    </Script>
+    <script src="{{ url_for('static',filename='js/popup.js') }}"></script>
+{% endblock %}
+    <!-- footer area start -->
+    {% block footer %}{{super()}}{% endblock %}
+    <!-- footer area end -->
+
+
+    
+    
+

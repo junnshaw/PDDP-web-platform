@@ -1,0 +1,2 @@
+calculate structure similarity profile
+combine structural similarity profile

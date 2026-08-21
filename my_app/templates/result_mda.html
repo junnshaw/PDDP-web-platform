@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block head %} {{super()}} 
+<style>
+    .time-table-wrapper.mt-45 .table__heading .row.g-0 .col-2{
+        width: 100%!important;
+    }
+</style>
+{% endblock %}
+{% block header %} {{super()}} {% endblock %}
+{% block body %}
+    <main>
+        <!-- slider area start -->
+        <div class="slider-area slider-area__3">
+            <div class="container container-3">
+                <div class="slider-active">
+                    <div class="single-slider single-slider-3 justify-content-center d-flex align-items-center slider-height-3"
+                        data-background="{{ url_for('static',filename='img/slider/03/resultpage-1.jpg') }}" data-overlay="3">
+                        <div class="slider-text mt-0 text-center">
+                            <span class="text-white">P D D P</span>
+                            <h2 class="text-white mb-45">Protein molecular docking<br>
+                                drug prediction platform</h2>
+                            <a href="{{ url_for('main.selectFunction') }}" class="generic-btn btn-1">Select Function</a>
+                            <!-- <a href="service-details.html" class="featured-btn">Other Features Function<i
+                                    class="fal fa-long-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider area end -->
+        <!-- appointment area start -->
+        <div class="appoint-area mb-120">
+            <div class="container">
+                <div class="generic-title generic-title-4 text-center">
+                    <!-- 特殊字符————空一行 -->
+                    <span> &nbsp </span>
+                    <h4>Result_Graph2MDA</h4>   
+                </div>
+                {% if notice %}
+                <div class="alert alert-warning text-center" role="alert" style="margin-bottom: 20px;">
+                    {{ notice }}
+                </div>
+                {% endif %}
+                {% if not notice and not data_show %}
+                <div class="alert alert-warning text-center" role="alert" style="margin-bottom: 20px;">
+                    Result file is not ready yet. Please refresh in a moment.
+                </div>
+                {% endif %}
+                {% if refresh or (not notice and not data_show) %}
+                <script>
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 10000);
+                </script>
+                {% endif %}
+                <div style="display:none " id="time">
+                    {{ data_show }}
+                </div>
+                <div class="time-table">
+                    <div class="time-table-wrapper mt-45">
+                        <div class="table__heading">
+                            <div class="row g-0">
+                                <!-- MolTrans_docker -->
+                                <!-- <div class="col-2" >
+                                    <div class="day__name text-center">
+                                        <b>SMILES</b>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>ProteinID</b>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>Posibility</b>
+                                    </div>
+                                </div> -->
+                                <!-- DeepConv-DTI -->
+                                <!-- <div class="col-2" >
+                                    <div class="day__name text-center">
+                                        <b>target_name</b>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>drug</b>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>Reactive or not(1/0)</b>
+                                    </div>
+                                </div> -->
+                                <div class="col-2">
+                                    <div class="day__name text-center">
+                                        <b>关联微生物</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table__content" style="height: 500px; overflow-y: auto;">
+                            
+                            {% for data in data_show %}
+                            <div class="row g-0 table__row">
+                                <!-- MolTrans_docker -->
+                                <!-- <div class='col-2 table__box-item' style="width: 33.3333333%; border-right: 2px solid; ">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["smiles"] }}</div>
+                                </div>
+                                <div class='col-2 table__box-item' style="width: 33.3333333%; border-right: 2px solid;">
+                                    <div class='box__height  d-flex align-items-center justify-content-center' style="overflow-x: auto;">{{ data["protein"] }}</div>
+                                </div>
+                                <div class='col-2 table__box-item' style="width: 33.3333333%;">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["pred"] }}</div>
+                                </div> -->
+                                <!-- DeepConv-DTI -->
+<!--                                 <div class='col-2 table__box-item' style="width: 50%; border-right: 2px solid; ">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["target_name"] }}</div>
+                                </div> -->
+                                <!-- <div class='col-2 table__box-item' style="width: 33.3333%; border-right: 2px solid;">
+                                    <div class='box__height  d-flex align-items-center justify-content-center' style="overflow-x: auto;">{{ data["drug"] }}</div>
+                                </div> -->
+                                <div class='col-2 table__box-item' style="width: 100%;">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["microbes"] }}</div>
+                                </div>
+                                <!-- <div class='col-2 table__box-item' style="width: 25%;">
+                                    <div class='box__height d-flex align-items-center justify-content-center'>{{ data["label"] }}</div>
+                                </div> -->
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /. time table -->
+            </div>
+        </div>
+        <!-- appointment area end -->
+    </main>
+{% endblock %}
+{% block footer %}{{super()}}{% endblock %}
+
+
+
+<script>
+    
+</script>

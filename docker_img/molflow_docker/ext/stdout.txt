@@ -1,0 +1,140 @@
+Start at Time: Sat May 28 02:59:29 2022
+loading hyperparamaters from ./moflow-params.json
+loading snapshot: ./model_snapshot_epoch_20
+Hyper-parameters:
+--------------------  ------------------------------------------------------------------------------------------------
+b_n_type              4
+b_n_flow              10
+b_n_block             1
+b_n_squeeze           19
+b_hidden_ch           [512, 512]
+b_affine              True
+b_conv_lu             2
+a_n_node              38
+a_n_type              10
+a_hidden_gnn          [256]
+a_hidden_lin          [512, 64]
+a_n_flow              38
+a_n_block             1
+mask_row_size_list    [1]
+mask_row_stride_list  [1]
+a_affine              True
+path                  results/zinc250k_512t2cnn_256gnn_512-64lin_10flow_19fold_convlu2_38af-1-1mask/moflow-params.json
+learn_dist            1
+seed                  1
+noise_scale           0.6
+--------------------  ------------------------------------------------------------------------------------------------
+model.ln_var: 0.29
+loading train/valid split information from: ./data/valid_idx_zinc.json
+Loading file ./data/zinc250k_relgcn_kekulized_ggnp.npz
+249455 in total, 224568  training data, 24887  testing data, 100 batchsize, train/batchsize 2245.68
+Load trained model and data done! Time 202.57 seconds
+valid molecules: 100/100
+[0] CN=CC=CC=CONO
+[1] FC=CCCCCCC1C=CCC1
+[2] CC=CCCC=CC=O
+[3] CCCCCCS(=O)CC(C)NC(C)P(N)C=CCC=O
+[4] CC(C=O)CCNC=O
+[5] CCC=CC=CCC(=O)CC(C)CNC(C)CCCC=CCl
+[6] O=CCCC=CCCCNCC=CF
+[7] CCCC=C(F)I(CF)N1C=C1
+[8] CCCCCCNCC=NNCCNCl
+[9] CCC=NC=CCC=CC(C)C(C)N(C=CF)CC=CC=O
+[10] CCOCCOC(C)(CCC=O)NC
+[11] CCC=CCN=CCCCCCC=CC=CC=[O+]CC
+[12] CC(=O)CC1NC(C)C1[N+](=O)C=O
+[13] CCC=CCCC(O)CCSCCNCSCOC1CO1
+[14] CONCC=CCCCCCC(Cl)NC1NCC=CC1=O
+[15] CC(=CF)C(C)N(C)CCCl
+[16] CCNCC=CC=CC(=O)C[N+](=O)CC=N[IH]C
+[17] CC(C)CNCCNC[O+]1CC(C)C1
+[18] CCCC=CC=CNCCCC=CC=CN(Cl)CNO
+[19] CCC=NC=CC=COC(CCC=CC=NN=CCNCC)NNC
+[20] CN(C)CNCCCN=CCCCN
+[21] CCCCCCCCC(=O)CC(C)NCC
+[22] CC=CC=CC=CC=CCNC=COO
+[23] C#CN=CC=CC=NCC(=O)C=CC=C1C=CC=CCN1
+[24] CNC(=O)NC(C(=O)C(C)C)C1(C=C(C)N(Cl)CSCl)CC1
+[25] CCOCC(C)C=CC(=O)CN=C(O)C=CN=C1NC(=O)N=C1CC
+[26] CON=CC=CC=CCOCCCSOCC=O
+[27] CCOCCCCC=C1C=CNCC1SCC
+[28] CCSCC1=CCNC1CCC=NC=NO
+[29] CCN=CCC(=O)C=CCNN
+[30] NOC(CC=CCCCCC(=O)C=NC=O)N=CC=O
+[31] CCN=CC=CC=CCCCSCC1NCCN1
+[32] CCC=CC=CCC(=O)CNO[IH]C(=O)C(O)Cl
+[33] CCCC(=O)C(C)NCC(=O)C(C)NCCNN1CO1
+[34] CCOOC(O)CC=C1CCCN1NCC(C)C(=O)CC
+[35] CN=C(O)CNCC=O
+[36] CC(C)CCCCC(C)C(=O)CC=NCCCC=O
+[37] CCCC=C(C)CC=O
+[38] COC1C=CC=CCCCCNNCPCCC1=CCF
+[39] CCCCCCCN(F)C(=O)C=C(C)C=COC
+[40] CCNC(O)CC=CSCCCCC=CCCC1CC1CC
+[41] CCNCCOCC(C)C=NBr
+[42] CCC(CCC(C)C(=O)CCO)OCl
+[43] CCCCCCCNSC=CCCN1C2=CC2=C(C)C(CNCCl)C1=CF
+[44] CCCNCCCC=O
+[45] CCCNN=NCNC(=O)N=CNCl
+[46] CCC1=CC=CCC1CNCN(C)I
+[47] CCCCC(N)CN=COC
+[48] CCOC(C)C
+[49] CC1C2C=CC=NN2COCCN1[IH]PNCCOCCCCl
+[50] CCCNCC(C)N(C)CNCCNC=CC=CC(C)COC
+[51] CN(C)C=CCC=C(Cl)OC=O
+[52] COc1ccccc1C(N)=CN(C)C(F)CC1CC1
+[53] CCN1COC=CN=C1NCNCC1=CCC=CC=C1C
+[54] CCCOC(=O)C=NCC
+[55] COC1=CCCCC1=C(Cl)SI(C)CCCCC=O
+[56] CCCCC=CCCC(=O)NCCC=CC=C(C)Cl
+[57] CC(=O)C=CC(C)=CCCOCC=CCC=CCCC=O
+[58] CC(O)CCCN=CC=COCCC(O)=CNN
+[59] C=C(C)C=CC=CCNC=O
+[60] COC=CC=CNNN(C)C=CCCOCC=C1CC=CN1C=O
+[61] CCCC=CC=CNCC(=O)C=CC=CC=NC=CC=O
+[62] CCSC(C)NCNN1NC1CC=COCC=CCC=COO
+[63] CCNC1CCC(N=O)C1(C)N
+[64] CCC=CC=CNCNCC
+[65] C=CCNCCCOC=CCCCC(=O)C=CCC
+[66] CCC[IH]CCC=CC(=O)CONNSF
+[67] C=C=CC(C)=CN(C)N(C)CC=C
+[68] CSCNCC(C)CC(=O)C=CC=CCC(C)=O
+[69] COCCCCC(C)CCC=CCNC(C)N
+[70] CCC=CCCCSCN=NCNCc1ccncc1
+[71] CC=COCNCC(F)OC(=O)CCNCS(=O)CCC
+[72] CCCC=CCC(=O)CCC
+[73] CC(CCC(=O)C=CSC=O)CNCCCN(C)NC[SH]=O
+[74] CCC[IH]CC(C)NCCC=CCCC(C)(C)C
+[75] CCC1=CC=CCC1
+[76] CCCCC[N+](C)=CC(=O)CCC(C)=O
+[77] CCCC(=O)NNC=CCCCCCC1C=CC=C(OC)C=C1C
+[78] CCCN(C)N=CCOCN=CC=CC(C)C=CCCl
+[79] O=CCCNCCC=CNC=C1CC=CN1C=O
+[80] CNNCC(C)CCCBr
+[81] CCC=NCCC=CC=CC(=O)C(NCCCC)OCC
+[82] CC=C(Cl)C1CCCC1
+[83] CCOCCCSC(O)CC=NC
+[84] CC(N)CCC(=O)NN=NC=CC(N)F
+[85] CC(C)SCC=CC=CCCCC=O
+[86] CC(C)CCNCC=CCC=CC=CC(=O)N=O
+[87] CCNC=CCCC(O)(O)CC
+[88] CC(CC1=CC(CC=O)CCC1F)=NNC(=O)CCCCN(C)C
+[89] COC=CCNNCC(C)C
+[90] CC(C=CCCC=CCCC=O)CCCC=CCNC=O
+[91] CC=CCCCCCC
+[92] O=CCC=CC=CC=NO
+[93] CCNCC=C(C)CCNCC
+[94] CC(=O)CC(=O)C=NCC=NOCNC=C(C)C=O
+[95] CCCC(=O)CNNC(C)N=CCOCC=NCCCC(C)=O
+[96] CCCC(=O)CC(C)C=CC1CSCC12CCCC=C2C
+[97] CC=CNC(COCC)OCCl
+[98] CCCCCC(=O)CSC=CCCNCCCCC(=O)SC
+[99] CCC=CCC=CC(=O)C(C)CC
+valid: 100.000%, unique: 100.000%, abs unique: 100.000%
+novelty: 100.000%, abs novelty: 100.000%
+validity: mean=100.00%, sd=0.00%, vals=[100.0]
+novelty: mean=100.00%, sd=0.00%, vals=[100.0]
+uniqueness: mean=100.00%, sd=0.00%, vals=[100.0]
+abs_novelty: mean=100.00%, sd=0.00%, vals=[100.0]
+abs_uniqueness: mean=100.00%, sd=0.00%, vals=[100.0]
+Task random generation done! Time 205.30 seconds, Data: Sat May 28 03:02:54 2022

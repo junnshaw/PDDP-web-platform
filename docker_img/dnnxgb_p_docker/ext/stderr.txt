@@ -1,0 +1,89 @@
+Using TensorFlow backend.
+WARNING:tensorflow:From /usr/local/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+/run_script/DNNXGB.py:72: UserWarning: Update your `Model` call to the Keras 2 API: `Model(inputs=[<tf.Tenso..., outputs=Tensor("ou...)`
+  model = Model(input=[input_1, input_2], output=output)
+WARNING:tensorflow:From /usr/local/lib/python3.7/site-packages/tensorflow_core/python/ops/nn_impl.py:183: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2022-06-02 08:07:47.157875: I tensorflow/core/platform/cpu_feature_guard.cc:145] This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in non-MKL-DNN operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-02 08:07:47.179625: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3699850000 Hz
+2022-06-02 08:07:47.180124: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x555ae9747180 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-06-02 08:07:47.180135: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-19
+OMP: Info #156: KMP_AFFINITY: 20 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 1 packages x 10 cores/pkg x 2 threads/core (10 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 10 maps to package 0 core 0 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 1 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 11 maps to package 0 core 1 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 2 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 12 maps to package 0 core 2 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 3 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 13 maps to package 0 core 3 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 4 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 14 maps to package 0 core 4 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 5 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 15 maps to package 0 core 5 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 6 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 16 maps to package 0 core 6 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 0 core 7 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 17 maps to package 0 core 7 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 8 maps to package 0 core 8 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 18 maps to package 0 core 8 thread 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 9 maps to package 0 core 9 thread 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 19 maps to package 0 core 9 thread 1 
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 12 thread 0 bound to OS proc set 0
+2022-06-02 08:07:47.188049: I tensorflow/core/common_runtime/process_util.cc:115] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+WARNING:tensorflow:From /usr/local/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 79 thread 1 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 80 thread 2 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 82 thread 3 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 83 thread 4 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 84 thread 5 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 85 thread 6 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 86 thread 7 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 88 thread 9 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 87 thread 8 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 89 thread 10 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 90 thread 11 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 91 thread 12 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 94 thread 15 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 93 thread 14 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 95 thread 16 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 92 thread 13 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 96 thread 17 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 97 thread 18 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 98 thread 19 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 99 thread 20 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 101 thread 22 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 102 thread 23 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 104 thread 25 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 103 thread 24 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 105 thread 26 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 106 thread 27 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 107 thread 28 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 100 thread 21 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 108 thread 29 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 109 thread 30 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 110 thread 31 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 111 thread 32 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 112 thread 33 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 113 thread 34 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 114 thread 35 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 115 thread 36 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 116 thread 37 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 117 thread 38 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 118 thread 39 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 12 tid 119 thread 40 bound to OS proc set 0
+/usr/local/lib/python3.7/site-packages/sklearn/preprocessing/_label.py:235: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+/usr/local/lib/python3.7/site-packages/sklearn/preprocessing/_label.py:268: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)

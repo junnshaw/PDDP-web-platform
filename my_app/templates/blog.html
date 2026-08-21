@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block head %} {{super()}} {% endblock %}
+
+{% block header %} {{super()}} {% endblock %}
+
+{% block body %}
+<main>
+    <div class="breadcrumb-area d-flex align-items-center breadcrumb__height"
+        data-background="{{ url_for('static',filename='img/slider/home-1.png') }}" data-overlay="5">
+        <div class="container container-3">
+            <div class="breadcrumb__text mt-150">
+                <div class="row align-items-center">
+                    <div class="col-xxl-6">
+                        <div class="breadcrumb__left">
+                            <div class="breadcrumb__title">
+                                <span>Welcome to our Intelligent medicine platform</span>
+                                <h2>News</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6">
+                        <div class="breadcrumb__right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url_for('main.blog') }}"><b>News</b></a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-area gray-bg pt-120 pb-90">
+        <div class="container">
+            <div class="row mb-50 align-items-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="generic-title">
+                        <span>Update & Plans</span>
+                        <h2>Project News</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single__news mb-30">
+                        <div class="news__img">
+                            <img src="{{ url_for('static',filename='img/news/n1.png') }}" alt="">
+                        </div>
+                        <div class="news__text">
+                            <div class="news__meta">
+                                <a href="{{ url_for('main.blog') }}" class="theme-color">Platform</a>
+                                <span>Project update</span>
+                            </div>
+                            <div class="news__link">
+                                <h4><a href="{{ url_for('main.blog') }}">Intelligent medicine platform function updates</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single__news mb-30">
+                        <div class="news__img">
+                            <img src="{{ url_for('static',filename='img/news/n2.png') }}" alt="">
+                        </div>
+                        <div class="news__text">
+                            <div class="news__meta">
+                                <a href="{{ url_for('main.blog') }}" class="theme-color">Model</a>
+                                <span>Research progress</span>
+                            </div>
+                            <div class="news__link">
+                                <h4><a href="{{ url_for('main.blog') }}">Prediction models and molecule generation tools</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single__news mb-30">
+                        <div class="news__img">
+                            <img src="{{ url_for('static',filename='img/news/n3.png') }}" alt="">
+                        </div>
+                        <div class="news__text">
+                            <div class="news__meta">
+                                <a href="{{ url_for('main.blog') }}" class="theme-color">Notice</a>
+                                <span>Service information</span>
+                            </div>
+                            <div class="news__link">
+                                <h4><a href="{{ url_for('main.blog') }}">Platform service notes and usage information</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block footer %}{{super()}}{% endblock %}
+

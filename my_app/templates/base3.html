@@ -1,0 +1,410 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- 顶部功能栏 -->
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HOME</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='img/favicon.ico') }}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/meanmenu.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slick.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/twentytwenty.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/df_style.css') }}" rel="stylesheet">
+
+    
+    <!-- JS here -->
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/one-page-nav-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/ajax-form.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/metisMenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.event.move.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.twentytwenty.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
+
+    
+    {% endblock %}
+
+    
+</head>
+
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your <a href="#" class="theme-color">Experience</a> and security.</p>
+        <![endif]-->
+
+    
+
+    {% block header %}
+    <!-- header area start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header-transparent">
+        <div class="header-area d-none d-lg-block">
+            <div class="header-top">
+                <div class="container container-3">
+                    <div class="header-top__inner-4">
+                        <div class="row g-0">
+                            <div class="col-xxl-2 col-xl-2 col-lg-3">
+                                <div class="header-left header__left-4">
+                                    <div class="emergency">
+                                        <span>People in use: <b>9999</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-5 d-flex align-items-center">
+                                <div class="header__list header__list-4">
+                                    <ul>
+                                        <li class="mr-35"><a href="mailto:info@webmail.com"><i
+                                                    class="fal fa-envelope"></i> info@webmail.com</a></li>
+                                        <li><a href="mailto:info@webmail.com"><i
+                                                    class="fal fa-phone"></i>980-098-098-09</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /. header top -->
+            <div class="header-bottom">
+                <div class="container container-3">
+                    <div class="header-wrapper header-wrapper__3 header-wrapper__4">
+                        <div class="header-wrapper__inner">
+                            <div class="row align-items-center">
+                                <div class="col-xxl-2 col-xl-2 col-lg-3">
+                                    <div class="logo">
+                                        <a href="{{ url_for('main.index') }}">
+                                            <img src="{{url_for('static',filename='img/logo/logo_PDDP.png')}}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 col-lg-7 col-sm-6 col-4 ">
+                                    <div class="header-left d-flex align-items-center">
+                                        <div class="header-menu-wrapper d-flex align-items-center">
+                                            <div class="header-nav header-nav__3 f-left d-none d-lg-block">
+                                                <nav id="mobile-menu">
+                                                    <ul>
+                                                        <li><a href="{{ url_for('main.index') }}">Home</a>
+                                                        </li>
+							<li><a href="{{ url_for('main.about') }}">About</a></li>
+                                                        <!-- 平台新闻页 -->
+							<li><a href="{{ url_for('main.blog') }}">News</a>
+                                                        </li>
+                                                        <!-- 联系方式提交页 -->
+							<li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                            <div class="mobile-toggle-bar">
+                                                <button>
+                                                    <i class="fal fa-bars"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 顶端功能栏右侧 -->
+                                <div class="col-xl-2  col-lg-2 col-sm-6 col-8">
+                                    <div class="header-cta header-cta__4 text-right">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="search-popup-btn"><i
+                                                        class="fal fa-search"></i></a>
+                                            </li>
+                                            <li class="visible-only-md">
+                                                <a href="#" class="info__toggle-btn"><i
+                                                        class="fal fa-bars"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+    <!-- search popup start -->
+    <!-- 搜索按钮弹出框 -->
+    <div class="search-popup">
+        <div class="search-close">
+            <button>
+                <i class="fal fa-times"></i>
+            </button>
+        </div>
+        <div class="search-form">
+            <form action="#">
+                <input type="text" placeholder="Search Here">
+                <button><i class="fal fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- responsive menu start -->
+    <!-- 手机用的项目组信息侧拉框-->
+    <div class="mobile-nav">
+        <div>
+            <button class="mobile-nav-close text-white">
+                <i class="fal fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <div class="nav" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="menu-tab-1-tab" data-bs-toggle="tab" href="#menu-tab-1" role="tab" aria-selected="true">Menu</a>
+                <a class="nav-link" id="menu-tab-2-tab" data-bs-toggle="tab" href="#menu-tab-2" role="tab"  aria-selected="false">Info</a>
+            </div>
+        </nav>
+        <div class="responsive-logo">
+            <a href="index.html"><img src="img/logo/logo_PDDP-white.png" alt=""></a>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="menu-tab-1" role="tabpanel">
+                <div class="mobile-menu"></div>
+            </div>
+            <div class="tab-pane fade" id="menu-tab-2" role="tabpanel">
+                <div class="side-info mb-30">
+                    <div class="contact-list mb-30">
+                        <h4>Team Address</h4>
+                        <p>66 Changjiang West Road, West Coast new area, Qingdao, Shandong</p>
+                    </div>
+                    <div class="contact-list mb-30">
+                        <h4>Phone Number</h4>
+                        <p>0536 111 6666 6666</p>
+                        <p>0536 111 6666 6666</p>
+                    </div>
+                    <div class="contact-list mb-30">
+                        <h4>Email Address</h4>
+                        <p>info@example.com</p>
+                        <p>example.mail@hum.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- info area start -->
+    <!-- 项目组信息侧拉框 -->
+    <div class="extra-info">
+        <div class="close-icon">
+            <button>
+                <i class="far fa-window-close"></i>
+            </button>
+        </div>
+        <div class="logo-side mb-30">
+            <!-- 平台LOGO -->
+            <a href="index.html">
+                <img src="img/logo/logo_PDDP-white.png" alt="">
+            </a>
+        </div>
+        <div class="side-info mb-30">
+            <!-- 项目组地址 -->
+            <div class="contact-list mb-30">
+                <h4>Team Address</h4>
+                <p>66 Changjiang West Road, West Coast new area, Qingdao, Shandong</p>
+            </div>
+            <!-- 项目组电话 -->
+            <div class="contact-list mb-30">
+                <h4>Phone Number</h4>
+                <p>0536 111 6666 6666</p>
+                <p>0536 111 6666 6666</p>
+            </div>
+            <!-- 项目组公共邮箱 -->
+            <div class="contact-list mb-30">
+                <h4>Email Address</h4>
+                <p>info@example.com</p>
+                <p>example.mail@hum.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas"></div>
+    <!-- info area end -->
+    {% endblock %}
+
+
+    {% block body %}
+    {% endblock %}
+  
+    {% block footer %}
+    <!-- footer area start -->
+    <!-- 底部信息块 -->
+    <footer class="footer" data-background="img/bg/footer-bg.jpg" data-overlay="9">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-xl col-lg col-md mb-4 mb-md-0">
+                        <div class="icon-footer">
+                            <a href="index-2.html"><img src="img/logo/logo_PDDP-white.png" alt=""></a>
+                        </div>
+                    </div>
+                    <!-- 登录方式 -->
+                    <div class="col-xl col-lg col-md">
+                        <div class="social__icon text-md-end text-start">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom pt-60 pb-40">
+                <div class="row">
+                    <!-- “关于我们” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer__left mb-30">
+                            <h4 class="title text-white">About Us</h4>
+                            <p>Because it does not spend hours selling
+                                to customers, maintaining a brick and mortar stores, or paying for a commissions</p>
+                            <div class="contact__list">
+                                <ul>
+                                    <li><i class="fal fa-phone"></i> <span><b>Phone: </b> 0536 111 6666 6666</span></li>
+                                    <li><i class="fal fa-envelope"></i> <span><b>Email: </b> info@webexample.com</span>
+                                    </li>
+                                    <li><i class="fal fa-envelope"></i> <span><b>Mon-Sat: </b>10:00AM - 09:00PM</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- “我们的页面” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget pl-30">
+                            <h4 class="title text-white">Our Pages</h4>
+                            <div class="footer__list">
+                                <ul>
+					<li><a href="{{ url_for('main.home') }}">Home</a></li>
+					<li><a href="{{ url_for('main.selectFunction') }}">Select Function</a></li>
+					<li><a href="{{ url_for('main.blog') }}">News</a></li>
+					<li><a href="{{ url_for('main.blog') }}">About</a></li>
+					<li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- “我们的服务” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget pl-30">
+                            <h4 class="title text-white">Our Services</h4>
+                            <div class="footer__list">
+                                <ul>
+                                    <li><a href="service-details.html">Face Lift</a></li>
+                                    <li><a href="service-details.html">Skin Implant</a></li>
+                                    <li><a href="service-details.html">Face Filler</a></li>
+                                    <li><a href="service-details.html">Eye & Eyelids</a></li>
+                                    <li><a href="service-details.html">Rhinoplasty</a></li>
+                                    <li><a href="faq.html">Terms Conditions</a></li>
+                                    <li><a href="service-details.html">Botex Solutions</a></li>
+                                    <li><a href="service-details.html">Breast Implent</a></li>
+                                    <li><a href="service-details.html">Radiease Implent</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- “关于我们的新闻” -->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer__right mb-30">
+                            <div class="footer-widget pl-40">
+                                <h4 class="title text-white">News Feeds</h4>
+                                <div class="footer__news--item">
+                                    <div class="news__sm--box mb-20">
+                                        <div class="news__sm--img">
+                                            <img src="img/sm-img/s1.png" alt="">
+                                        </div>
+                                        <div class="news__sm--text">
+                                            <div class="news__sm--meta">
+                                                <span><a href="blog.html" class="theme-color">Experience</a> </span> |
+                                                <span>August 22th, 2019</span>
+                                            </div>
+                                            <h5 class="text-white"><a href="news-details.html">Most Popular Breast
+                                                    Implant </a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="news__sm--box mb-20">
+                                        <div class="news__sm--img">
+                                            <img src="img/sm-img/s2.png" alt="">
+                                        </div>
+                                        <div class="news__sm--text">
+                                            <div class="news__sm--meta">
+                                                <span><a href="blog.html" class="theme-color">Experience</a> </span> |
+                                                <span>August 22th, 2019</span>
+                                            </div>
+                                            <h5 class="text-white"><a href="news-details.html">Tips How to repair your
+                                                    by yourselft</a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="news__sm--box mb-20">
+                                        <div class="news__sm--img">
+                                            <img src="img/sm-img/s3.png" alt="">
+                                        </div>
+                                        <div class="news__sm--text">
+                                            <div class="news__sm--meta">
+                                                <span><a href="blog.html" class="theme-color">Experience</a> </span> |
+                                                <span>August 22th, 2019</span>
+                                            </div>
+                                            <h5 class="text-white"><a href="news-details.html">Face Lift is a
+                                                    Non-surgical Surgery</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="copyright-area">
+            <div class="footer__copyright">
+                <p>Copyright <a href="mailto:by@Example.com">by@Example</a> - 2021</p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+    {% endblock %} 
+</body>
+
+<script>
+
+</script>

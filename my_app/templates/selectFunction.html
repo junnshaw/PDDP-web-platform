@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% block head %} {{super()}} {% endblock %}
+
+{% block header %} {{super()}} {% endblock %}
+
+{% block body %}
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area d-flex align-items-center breadcrumb__height"
+            data-background="{{ url_for('static',filename='img/slider/home-1.png') }}" data-overlay="5">
+            <div class="container container-3">
+                <div class="breadcrumb__text mt-150">
+                    <div class="row align-items-center">
+                        <!-- 主海报上标题 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__left">
+                                <div class="breadcrumb__title">
+                                    <span>Welcome to our  Intelligent medicine platform</span>
+                                    <h2>Select your Function</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 主海报上右侧按钮 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.selectFunction') }}"><b>Function</b></a></li>
+                                        <!-- <li class="breadcrumb-item"><a href="#"><b>Pricing</b></a></li> -->
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+        <!-- pricing area start -->
+        <!-- 功能选择块 -->
+        <div class="price-area pt-120 pb-120">
+            <div class="container">
+                <div class="price__wrapper">
+                    <div class="row">
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <a href="{{ url_for('dti.submitMolecule') }}"><img src="{{ url_for('static',filename='img/bg/PMAP_small.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <h4><a href="{{ url_for('dti.submitMolecule') }}">Molecule-Protein Affinity Prediction</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p>The main goal of MPAP is to identify new ligands for specific protein targets. In many research areas, including drug repositioning, side effect prediction, multipharmacology and drug resistance, MPAP identification has benefited.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <a href="{{ url_for('main.submitMolecule_DDI') }}"><img src="{{ url_for('static',filename='img/bg/about/PRFP_small.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <h4><a href="{{ url_for('main.submitMolecule_DDI') }}">Molecule_DDI</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p>Here you can upload your own protein data. We can help you predict the phosphorylation sites. I hope it can be helpful to your research.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <a href="{{ url_for('main.submittransphos') }}"><img src="{{ url_for('static',filename='img/bg/about/tranphos001.jpeg') }}" alt="" width="375px" height="225px"></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <h4><a href="{{ url_for('main.submittransphos') }}">TransPhos--Prediction of protein phosphorylation sites</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p>Protein phosphorylation plays an important role in many human diseases. Here you can upload your own protein data. We can help you predict the phosphorylation sites. I hope it can be helpful to your research.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        
+                        <!-- <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <a href="{{ url_for('main.submitMolecule_PRFP') }}"><img src="{{ url_for('static',filename='img/bg/about/PRFP_small.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <h4><a href="{{ url_for('main.submitMolecule_PRFP') }}">Protein Related Function Prediction</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p>Abdominoplasty (Tummy Tuck)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <a href="{{ url_for('main.submitMolecule_MPP') }}"><img src="{{ url_for('static',filename='img/bg/about/MPP_small.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <h4><a href="{{ url_for('main.submitMolecule_MPP') }}">Molecular Property Prediction</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p>Under development......<br>Molecular property prediction is a basic task in the field of drug discovery. <br>
+                                        The calculation method of accurate prediction can greatly speed up the overall process of finding better drug candidates in a faster and cheaper way.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <a href="{{ url_for('main.submitmolflow') }}"><img src="{{ url_for('static',filename='img/bg/about/GM_small.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <h4><a href="{{ url_for('main.submitmolflow') }}">Generating Molecule</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p><br>Aims at generate novel chemical compounds with desirable chemical and pharmacological properties from scratch using computer-based methods.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--dnnxgb test-->
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <!--改路由-->
+                                    <a href="{{ url_for('main.submitdnnxgb_p') }}"><img src="{{ url_for('static',filename='img/bg/about/DNN.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <!--改路由-->
+                                    <h4><a href="{{ url_for('main.submitdnnxgb_p') }}">DNN_XGBOOST</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p><br>The hybrid classifier (DNN-XGB) incorporates three types of sequence-based features-amino acid composition (AAC),composition (CT), and local descriptors (LD)-as inputs.
+                                           <br>The DNN extracts hidden information by performing hierarchical abstraction on the raw features passed to the XGB classifier.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!--jtvae test-->
+                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <!--改路由-->
+                                    <a href="{{ url_for('main.submitjtvae') }}"><img src="{{ url_for('static',filename='img/bg/about/GM_small.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <!--改路由-->
+                                    <h4><a href="{{ url_for('main.submitjtvae') }}">Junction_Tree_VAE</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p><br>jtvae model test</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--mda test-->
+                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                            <div class="pricing__box-4">
+                                <div class="pricing__img pricing__img-4">
+                                    <!--改路由-->
+                                    <a href="{{ url_for('main.submitmda') }}"><img src="{{ url_for('static',filename='img/bg/about/mda1.png') }}" alt=""></a>
+                                </div>
+                                <div class="pricing__text pricing__text-4">
+                                    <!--改路由-->
+                                    <h4><a href="{{ url_for('main.submitmda') }}">Drug-Microbe Interaction Prediction</a></h4>
+                                    <div class="appoint__list appoint__list-4">
+                                        <p><br>Graph2MDA:an integrated framework that combines a variational graph autoencoder (VGAE) and deep neural networks (DNN) to predict relationship between microorganisms and drugs in multimodal networks.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- pricing area end -->
+
+    </main>
+{% endblock %}
+
+    <!-- footer area start -->
+    <!-- 底部信息块 -->
+
+{% block footer %}{{super()}}{% endblock %}
+    <!-- footer area end -->
+
+
+
+    <!-- JS here -->
+    <!-- <script src="js/vendor/jquery-3.5.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/one-page-nav-min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/metisMenu.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/main.js"></script> -->
+
+    <!-- <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/one-page-nav-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/ajax-form.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/metisMenu.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.event.move.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.twentytwenty.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"></script> -->
+
+

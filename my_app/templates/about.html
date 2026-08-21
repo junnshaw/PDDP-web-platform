@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block head %} {{super()}} {% endblock %}
+
+{% block header %} {{super()}} {% endblock %}
+
+{% block body %}
+<main>
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area d-flex align-items-center breadcrumb__height"
+        data-background="{{ url_for('static',filename='img/slider/home-1.png') }}" data-overlay="5">
+        <div class="container container-3">
+            <div class="breadcrumb__text mt-150">
+                <div class="row align-items-center">
+                    <!-- 主海报上标题 -->
+                    <div class="col-xxl-6">
+                        <div class="breadcrumb__left">
+                            <div class="breadcrumb__title">
+                                <span>Welcome to our  Intelligent medicine platform</span>
+                                <h2>Select your Function</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 主海报上右侧按钮 -->
+                    <div class="col-xxl-6">
+                        <div class="breadcrumb__right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url_for('main.selectFunction') }}"><b>Function</b></a></li>
+                                    <!-- <li class="breadcrumb-item"><a href="#"><b>Pricing</b></a></li> -->
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+    <!-- pricing area start -->
+    <!-- 功能选择块 -->
+    <div class="price-area pt-120 pb-120">
+        <div class="container">
+            <div class="price__wrapper">
+                <div class="row">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                        <div class="pricing__box-4">
+                            <div class="pricing__img pricing__img-4">
+                                <a href="{{ url_for('dti.submitMolecule') }}"><img src="{{ url_for('static',filename='img/bg/PMAP_small.png') }}" alt=""></a>
+                            </div>
+                            <div class="pricing__text pricing__text-4">
+                                <h4><a href="{{ url_for('dti.submitMolecule') }}">Molecule-Protein Affinity Prediction</a></h4>
+                                <div class="appoint__list appoint__list-4">
+                                    <p>The main goal of MPAP is to identify new ligands for specific protein targets. In many research areas, including drug repositioning, side effect prediction, multipharmacology and drug resistance, MPAP identification has benefited.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                        <div class="pricing__box-4">
+                            <div class="pricing__img pricing__img-4">
+                                <a href="{{ url_for('main.submitMolecule_DDI') }}"><img src="{{ url_for('static',filename='img/bg/about/PRFP_small.png') }}" alt=""></a>
+                            </div>
+                            <div class="pricing__text pricing__text-4">
+                                <h4><a href="{{ url_for('main.submitMolecule_DDI') }}">Drug Drug Interaction</a></h4>
+                                <div class="appoint__list appoint__list-4">
+                                    <p>When multiple drugs are combined, drugs may interact with other drugs (DDI), resulting in unexpected adverse drug events,it may not only strengthen the efficacy or reduce the side effects, but also weaken the efficacy or have toxic and side effects.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                        <div class="pricing__box-4">
+                            <div class="pricing__img pricing__img-4">
+                                <a href="{{ url_for('main.submitMolecule_PRFP') }}"><img src="{{ url_for('static',filename='img/bg/about/PRFP_small.png') }}" alt=""></a>
+                            </div>
+                            <div class="pricing__text pricing__text-4">
+                                <h4><a href="{{ url_for('main.submitMolecule_PRFP') }}">Protein Related Function Prediction</a></h4>
+                                <div class="appoint__list appoint__list-4">
+                                    <p>Abdominoplasty (Tummy Tuck)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                        <div class="pricing__box-4">
+                            <div class="pricing__img pricing__img-4">
+                                <a href="{{ url_for('main.submitMolecule_MPP') }}"><img src="{{ url_for('static',filename='img/bg/about/MPP_small.png') }}" alt=""></a>
+                            </div>
+                            <div class="pricing__text pricing__text-4">
+                                <h4><a href="{{ url_for('main.submitMolecule_MPP') }}">Molecular Property Prediction</a></h4>
+                                <div class="appoint__list appoint__list-4">
+                                    <p>Under development......<br>Molecular property prediction is a basic task in the field of drug discovery. <br>
+                                    The calculation method of accurate prediction can greatly speed up the overall process of finding better drug candidates in a faster and cheaper way.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-30 mb-lg-0">
+                        <div class="pricing__box-4">
+                            <div class="pricing__img pricing__img-4">
+                                <a href="{{ url_for('main.submitMolecule_GM') }}"><img src="{{ url_for('static',filename='img/bg/about/GM_small.png') }}" alt=""></a>
+                            </div>
+                            <div class="pricing__text pricing__text-4">
+                                <h4><a href="{{ url_for('main.submitMolecule_GM') }}">Generating Molecule</a></h4>
+                                <div class="appoint__list appoint__list-4">
+                                    <p><br>Aims at generate novel chemical compounds with desirable chemical and pharmacological properties from scratch using computer-based methods.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pricing area end -->
+
+</main>
+{% endblock %}
+
+    <!-- footer area start -->
+    <!-- 底部信息块 -->
+
+{% block footer %}{{super()}}{% endblock %}
+    <!-- footer area end -->
+
+
+

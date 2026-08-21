@@ -1,0 +1,447 @@
+{% extends "base.html" %}
+{% block head %} 
+{{super()}}
+<style>
+.btn-1{
+    color:#9e4f4b!important;
+}
+table {
+    width: 100%;
+  }
+  
+  table tbody tr td {
+    padding: 3px;
+    vertical-align: bottom;
+    text-align: center;
+  }
+  
+  .input-container {
+    padding: 10px;
+  }
+  
+  .settings-container {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .canvas-container {
+    margin: 10px;
+    text-align: center;
+  }
+
+  label {
+    font-family: Lato;
+    font-size: 0.75em;
+    color: #000;
+    display: block;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.75);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+    border: 4px solid #fff;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+  }
+
+  .contact-wrapper .row.align-items-center{
+    background-color: #9e4b47;
+  }
+  .contact-wrapper .row.align-items-center .canvas-container{
+    background-color: #FFF;
+  }
+
+  .nice-select{
+      margin-bottom: 10px;
+  }
+</style>
+
+{% endblock %}
+{% block header %} {{super()}} {% endblock %}
+{% block body %}
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area d-flex align-items-center breadcrumb__height"
+            data-background="{{ url_for('static',filename='img/bg/about/select_function-bg.jpg') }}" data-overlay="5">
+            <div class="container container-3">
+                <div class="breadcrumb__text mt-150">
+                    <div class="row align-items-center">
+                        <!-- 主海报上标题 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__left">
+                                <div class="breadcrumb__title">
+                                    <span>Protein sequence information</span>
+                                    <h2>PPI Prediction Platform</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 主海报上右侧按钮 -->
+                        <div class="col-xxl-6">
+                            <div class="breadcrumb__right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ url_for('main.selectFunction') }}"><b>Function</b></a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+        <!-- contact area start -->
+        <div class="contact-area mt-120">
+            <div class="container">
+                <div class="contact-widget mb-minus-100">
+                    <div class="contact-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-xxl-5 col-xl-5 col-lg-6">
+                                <div class="pricing__img pricing__img-4">
+                                    <img src="{{ url_for('static',filename='img/bg/about/dnnxgb1.png') }}" alt="" width="475px" height="255px">
+                                    
+                                    <div style="color:rgb(247, 247, 250)">
+                                        <div style="font-size:20px">
+                                        <br>DNN-XGB Model
+                                        </div>
+                                    </div>
+                                    
+                                       
+
+                                    
+                                </div>
+                                <!-- smiles输入 -->
+                                <!-- <div class="input-container">
+                                    <input id="input" type="text" class="parser" placeholder="请输入合格的SMILES..." value="[Li+].[P-]1\2\3(OC(=O)C(=O)O1)(OC(=O)C(=O)O2)(OC(=O)C(=O)O3)" />
+                                    <div id="log">&nbsp;</div>
+                                </div> -->
+                                <!-- 分子结构展示 -->
+                                <!-- <div class="canvas-container">
+                                <canvas id="output-canvas" width="500" height="500"></canvas>
+                                </div> -->
+                                <!-- 结构形状自定义 -->
+                                <!-- <div class="settings-container">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                        <label for="textSize">Text Size</label>
+                                        <input class="slider" type="range" id="textSize" name="textSize" value="5" min="2" max="20" step="1" />
+                                        </td>
+                                        <td>
+                                            <label for="bondThickness">Bond Thickness</label>
+                                            <input class="slider" type="range" id="bondThickness" name="bondThickness" value="0.6" min="0.01" max="5" step="0.1" />
+                                        </td>
+                                        <td>
+                                        <label for="bondLength">Bond Length</label>
+                                        <input class="slider" type="range" id="bondLength" name="bondLength" value="16" min="1" max="99" step="1" />
+                                        </td>
+                                        <td>
+                                        <label for="shortBondLength">Short Bond Length</label>
+                                        <input class="slider" type="range" id="shortBondLength" name="shortBondLength" value="85" min="0" max="100" step="1" />
+                                        </td>
+                                        <td>
+                                        <label for="bondSpacing">Bond Spacing</label>
+                                        <input class="slider" type="range" id="bondSpacing" name="bondSpacing" value="4" min="1" max="99" step="1" />
+                                        </td>
+                                        <td>
+                                        <label for="size">Size</label>
+                                        <input class="slider" type="range" id="size" name="size" value="500" min="250" max="1000" step="1" />
+                                        </td>
+                                        <td>
+                                        <label for="overlap">Overlap Resolution Steps</label>
+                                        <input class="slider" type="range" id="overlap" name="overlap" value="1" min="0" max="10" step="1" />
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            
+                                <div>
+                                    <label><input id="debug" name="debug" type="checkbox">Debug</label>
+                                </div>
+                                </div> -->
+                                <!-- <div class="contact__left" data-background="{{ url_for('static',filename='img/bg/contact-bg.png') }}">
+                                    <h4>Mapping Here</h4>
+                                    <p>Submit Task anytime & from anywhere</p>
+                                    <div class="contact__list-2">
+                                        <div class="graph">
+                                            <p>存放化合物分子绘图工具。ChemAxon的MarvinJS工具需要购买权限，暂时不能用</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="col-xxl-7 col-xl-7 col-lg-6">
+                                <!-- 提交模块 -->
+                                <div class="contact__right pr-80 mt-50 mt-lg-0">
+                                    <!-- <br>
+                                    <h4>DNN_XGBOOST</h4> -->
+                                    <div class="contact__form appointment__form  mt-35">
+                                        <form method="POST" enctype="multipart/form-data" action="#">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <!-- <a class="generic-btn btn-1 border-0 w-fit-content" href="{{ url_for('main.result') }}">Submit Request</a> -->
+                                                    <!-- 原按钮时button,可onclick=""链接函数 -->
+                                                    <!-- <input type="button" class="generic-btn btn-1 border-0 w-fit-content" name="submit_button_dnnxgb" id="submit_button_dnnxgb" onclick="pop()" value="提交"> -->
+                                                    <a class="generic-btn btn-dnn border-0 w-fit-content" href="{{ url_for('main.submitdnnxgb') }}">Double</a>
+                                                    <div id="submit-message" class="col-md-4"></div>
+                                                </div>
+                                                <!-- 提交模型选择 -->
+                                                <div class="col-xxl-12">
+                                                    <select name="" class="nice-select">
+                                                        <span class="current">DNN_XGBOOST</span>
+                                                        <ul class="list">
+                                                            <li data-value="DNN_XGBOOST" class="option selected">DNN_XGBOOST</li>
+                                                            <!-- <li data-value="DeepDTA" class="option">DeepDTA</li>
+                                                            <li data-value="DeepConvDTI" class="option">DeepConvDTI</li> -->
+                                                        </ul>
+                                                        <!-- option不要删,删了出错 -->
+                                                        <option value="DNN_XGBOOST">DNN_XGBOOST</option>
+                                                        <!-- <option value="DeepDTA">DeepDTA</option>
+                                                        <option value="DeepConvDTI">DeepConvDTI</option> -->
+                                                    </select>
+                                                </div>
+                                                <!-- 提交SMILES字符串 -->
+                                                <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="parser" name="input_dnnxgb_p"
+                                                            id="input_dnnxgb_p" placeholder="Please Enter Protein Sequence Information">
+                                                        <div id="log">&nbsp</div>
+                                                    </div>
+                                                </div>
+                                                <!-- add -->
+                                                <!-- <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="parser" name="input_dnnxgb2"
+                                                            id="input_dnnxgb2" placeholder="请输入蛋白质2序列信息">
+                                                        <div id="log">&nbsp</div>
+                                                    </div>
+                                                </div> -->
+                                                <!-- 提交按钮 -->
+                                                <div class="col-xxl-12">
+                                                    <div class="form-group">
+                                                        <!-- <a class="generic-btn btn-1 border-0 w-fit-content" href="{{ url_for('main.result') }}">Submit Request</a> -->
+                                                        <!-- 原按钮时button,可onclick=""链接函数 -->
+                                                        <input type="button" class="generic-btn btn-1 border-0 w-fit-content" name="submit_button_dnnxgb_p" id="submit_button_dnnxgb_p" onclick="pop()" value="Submit Data">
+                                                        <input type="button" class="generic-btn btn-1 border-0 w-fit-content" onclick="window.location.href='{{ url_for("dnnxgb.dnnxgb_introduction") }}'" value="How to use" color='black'>
+                                                        <div id="submit-message" class="col-md-4"></div><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map" style="height:200px;">
+            </div>
+            
+        </div>
+        <!-- contact area end -->
+        
+    </main>
+    <!-- 弹出进度条 -->
+    <div id="popwindow" style="display:none;">
+        <canvas id='canvas'></canvas>
+        <span class='background'></span>
+        <span class='foreground'></span>
+        正在运行，请稍候......
+    </div>
+    <!-- 分子结构展示格式及弹出框格式 -->
+    <Script>
+        //分子结构展示
+        var input = document.getElementById('input');
+        var debugCheckbox = document.getElementById('debug');
+        var bondThicknessInput = document.getElementById('bondThickness')
+        var textSizeInput = document.getElementById('textSize');
+        var bondLengthInput = document.getElementById('bondLength');
+        var shortBondLengthInput = document.getElementById('shortBondLength');
+        var bondSpacingInput = document.getElementById('bondSpacing');
+        var sizeInput = document.getElementById('size');
+        var overlapInput = document.getElementById('overlap');
+
+        var options = {
+        debug: false,
+        atomVisualization: 'default'
+        }
+        
+        var smilesDrawer = new SmilesDrawer.Drawer(options);
+        var input = document.getElementById('input');
+        var log = document.getElementById('log');
+        
+        function draw() {
+        let t = performance.now();
+        
+        SmilesDrawer.parse(input.value, function (tree) {
+            smilesDrawer.draw(tree, 'output-canvas', 'light', false);
+            let td = performance.now() - t;
+            log.innerHTML = '&nbsp;';
+            log.style.visibility = 'hidden';
+        
+            new Noty({
+            text: 'Drawing took ' + td.toFixed(3) + 'ms with a total overlap score of ' + smilesDrawer.getTotalOverlapScore().toFixed(3) + '.',
+            killer: true,
+            timeout: 2000,
+            animation: {
+                open: null,
+                close: null
+            }
+            }).show();
+        }, function (err) {
+            log.innerHTML = err;
+            log.style.visibility = 'visible';
+            console.log(err);
+        });      
+        }
+        
+        function updateOptions() {
+        smilesDrawer = new SmilesDrawer.Drawer(options);
+        draw();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function (event) {
+        input.addEventListener('input', function () {
+            draw();
+        });
+        //结构自定义
+        /*
+        debugCheckbox.addEventListener('click', function () {
+            options.debug = debugCheckbox.checked ? true : false;
+            updateOptions();
+        });
+        
+        textSizeInput.addEventListener('input', function () {
+            options.fontSizeLarge = parseInt(textSizeInput.value);
+            options.fontSizeSmall = (3 / 5) * options.fontSizeLarge;
+            updateOptions();
+        });
+        
+        bondThicknessInput.addEventListener('input', function () {
+            options.bondThickness = parseFloat(bondThicknessInput.value);
+            updateOptions();
+        });
+        
+        bondLengthInput.addEventListener('input', function () {
+            options.bondLength = parseInt(bondLengthInput.value);
+            updateOptions();
+        });
+        
+        shortBondLengthInput.addEventListener('input', function () {
+            options.shortBondLength = parseInt(shortBondLengthInput.value) / 100;
+            updateOptions();
+        });
+        
+        bondSpacingInput.addEventListener('input', function () {
+            options.bondSpacing = parseInt(bondSpacingInput.value);
+            updateOptions();
+        });
+        
+        sizeInput.addEventListener('input', function () {
+            options.width = parseInt(sizeInput.value);
+            options.height = parseInt(sizeInput.value);
+            updateOptions();
+        });
+        
+        overlapInput.addEventListener('input', function () {
+            options.overlapResolutionIterations = parseInt(overlapInput.value);
+            updateOptions();
+        });debugCheckbox.addEventListener('click', function () {
+            options.debug = debugCheckbox.checked ? true : false;
+            updateOptions();
+        });
+        
+        textSizeInput.addEventListener('input', function () {
+            options.fontSizeLarge = parseInt(textSizeInput.value);
+            options.fontSizeSmall = (3 / 5) * options.fontSizeLarge;
+            updateOptions();
+        });
+        
+        bondThicknessInput.addEventListener('input', function () {
+            options.bondThickness = parseFloat(bondThicknessInput.value);
+            updateOptions();
+        });
+        
+        bondLengthInput.addEventListener('input', function () {
+            options.bondLength = parseInt(bondLengthInput.value);
+            updateOptions();
+        });
+        
+        shortBondLengthInput.addEventListener('input', function () {
+            options.shortBondLength = parseInt(shortBondLengthInput.value) / 100;
+            updateOptions();
+        });
+        
+        bondSpacingInput.addEventListener('input', function () {
+            options.bondSpacing = parseInt(bondSpacingInput.value);
+            updateOptions();
+        });
+        
+        sizeInput.addEventListener('input', function () {
+            options.width = parseInt(sizeInput.value);
+            options.height = parseInt(sizeInput.value);
+            updateOptions();
+        });
+        
+        overlapInput.addEventListener('input', function () {
+            options.overlapResolutionIterations = parseInt(overlapInput.value);
+            updateOptions();
+        });
+        */
+        });
+
+        //弹出框格式
+        function pop(){
+            var div = document.getElementById('popwindow');
+            div.style.display = 'block';
+            div.style.position = 'absolute';
+            div.style.width = '100%';
+            div.style.height = '1300px';
+            div.style.left = '0';
+            div.style.top = '0';
+            div.style.background = '#f5f5f5';
+            div.style.zIndex = '100';
+            div.style.fontFamily = 'Microsoft YaHei';
+            div.style.fontWeight = '200';
+            div.style.textAlign = 'center';
+        }
+    </Script>
+    <script src="{{ url_for('static',filename='js/popup.js') }}"></script>
+{% endblock %}
+    <!-- footer area start -->
+    {% block footer %}{{super()}}{% endblock %}
+    <!-- footer area end -->
+
+
+    
+    
+
